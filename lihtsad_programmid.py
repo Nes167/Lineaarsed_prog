@@ -59,9 +59,17 @@ except:
 #Ülesanne 2
 #Sulgude kasutamine
 print("a=3 +8/ (4 - 2) * 4")
-a=3 + 8 / (4 + 2) * 4
+a=3 + 8 / (4 - 2) * 4
 print(a)
 print("a=(3 + 8)/ (4 - 2) *4")
-a=(3 +8) / (4 +2) * 4
+a=(3 +8) / (4 - 2) * 4
 print(a)
-
+print("a=3 + 8 / 4 - 2 * 4")
+a=3 + 8 / 4 - 2 * 4
+print(a)
+print("a=(3 + 8) / 4 - 2 * 4")
+a=(3 + 8) / 4 - 2 * 4
+print(a)
+print("a=(3 + 8 / 4) - 2 * 4")
+a=(3 + 8 / 4) - 2 * 4
+print(a)
