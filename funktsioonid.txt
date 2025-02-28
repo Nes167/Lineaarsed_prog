@@ -8,3 +8,9 @@ capitalize(), "Sõne"
 type() määrab muutuja tüübi
 funktsioonid
 math, random moodulide funktsioonid: pi, round(),randint()
+datetime moduli funktsioonid date.today(), strftime(), day, month, year
+calendar moduli monthrange(a,b)[b] kuu päevade arv
+try:
+ ...
+except:
+ ...
