@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Tund1_Funktsioonide_kasutamine.py</StartupFile>
+    <StartupFile>vigade_otsing.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,7 @@
   <ItemGroup>
     <Compile Include="Lineaarsed_prog.py" />
     <Compile Include="Tund1_Funktsioonide_kasutamine.py" />
+    <Compile Include="vigade_otsing.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="funktsioonid.txt" />
