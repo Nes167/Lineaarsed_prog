@@ -21,6 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="lihtsad_programmid.py" />
     <Compile Include="Lineaarsed_prog.py" />
     <Compile Include="Tund1_Funktsioonide_kasutamine.py" />
     <Compile Include="vigade_otsing.py" />

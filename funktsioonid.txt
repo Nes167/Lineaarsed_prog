@@ -1,10 +1,10 @@
 print(), Kuvame ekraanile tekst
 input(), sisestame info ja edastame tekstina
-float(), 
+float(), tekst konventeerib ujukomaarvusse
 int(), tekst konventeerib arvusse
-upper(), 
-lower(), 
-capitalize(), 
+upper(), "SÕNE"
+lower(), "sõne"
+capitalize(), "Sõne"
 type() määrab muutuja tüübi
 funktsioonid
 math, random moodulide funktsioonid: pi, round(),randint()
