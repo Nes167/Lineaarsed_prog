@@ -45,11 +45,14 @@ onjaanud=paev1+paev2+paev3+paev4+paev5+paev6+paev7+paev8+paev9+paev10+paev11
 print(f"Aasta lõpuni on jäänud {onjaanud} päevad")
 try:
     sunnipaev=input("Sünnipaev: ") #DD/MM/YYYY
-    sp=datetime.strptime(sunnipaev,"%d/%m/%y")
+    sp=datetime.strptime(sunnipaev,"%d/%m/%Y")
     print(sp)
     vanus_aastades=tana.year-sp.year
-    vanus_kuudes=vanus_aastades*12
-    print(f"Sinu vanus aastades on {vanus_aastades}, kuudes on {vanus_kuudes}")
+    vanus_kuudes=vanus_aastades * 12
+    vanus_paevades=(tana-sp.date()).days
+    print(f"Sinu vanus aastades on {vanus_aastades} ")
+    print(f"Sinu vanus kuudes on {vanus_kuudes} ")
+    print(f"Sinu vanus päevades on {vanus_paevades} ")
 except:
     print("sa pead DD/MM/YYYY format kasutada sisestamisel")
 
