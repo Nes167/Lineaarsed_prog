@@ -2,6 +2,7 @@ from datetime import *
 from calendar import *
 from math import *
 from time import strptime
+
 #Ülesanne 1
 tana=date.today() 
 print(f"Tere! Täna on {tana}")
@@ -64,5 +65,88 @@ print("a=3 +8/ (4 - 2) * 4")
 a=3 + 8 / (4 - 2) * 4
 print(a)
 print("a=(3 + 8)/ (4 - 2) *4")
-a=(3 +8) / (4 +2) * 4
+a=(3 +8) / (4 - 2) * 4
 print(a)
+print("a=3 + 8 / 4 - 2 * 4")
+a=3 + 8 / 4 - 2 * 4
+print(a)
+print("a=(3 + 8) / 4 - 2 * 4")
+a=(3 + 8) / 4 - 2 * 4
+print(a)
+print("a=(3 + 8 / 4) - 2 * 4")
+a=(3 + 8 / 4) - 2 * 4
+print(a)
+
+#Ülesanne 3
+
+try:
+    R=float(input("Sisesta R,kus R on ringi raadius:"))
+    # ==, !=, <, >, <=, >=
+    if R<=0:
+        print("Nulliga ja neg. arvudega ei ole mõtte töötada!")
+    else:
+        Ringi_S=round(pi*R**2,2)
+        Ringi_P=round(2*pi*R,2)
+        Ruudu_S=2*R*2*R
+        Ruudu_P=4*2*R
+        print(f"Ringi_S= {Ringi_S}\nRingi_P= {Ringi_P}\nRuudu_S= {Ruudu_S}\nRuudu_P= {Ruudu_P}")
+except:
+    print("Sisesta ainult arvud!!!")
+
+#Ülesanne 4
+maa_r_km = 6378
+münte_d = 25.75
+maa_r_mm = maa_r_km*1000000
+ümber_maa=2*pi*maa_r_mm
+münte_kogus = round(ümber_maa / münte_d)
+print(f"On vaja {münte_kogus} münte.")
+
+#Ülesanne 5
+a="kill-koll ".capitalize()
+b="killadi-koll ".capitalize()
+print(2*a,b,2*a,b,4*a)
+
+#Ülesanne 6
+t="""
+Rong see sõitis tsuhh tsuhh tsuhh,
+piilupart oli rongijuht.
+Rattad tegid rat tat taa,
+rat tat taa ja tat tat taa.
+Aga seal rongi peal,
+kas sa tead, kes olid seal?
+
+Rong see sõitis tuut tuut tuut,
+piilupart oli rongijuht.
+Rattad tegid kill koll koll,
+kill koll koll ja kill koll kill.
+"""
+print(t.upper())
+
+#Ülesanne 7
+a = float(input("Sisesta ristküliku esimese külje pikkus: "))
+b = float(input("Sisesta ristküliku teise külje pikkus: "))
+umbermoot = 2*(a+b)
+pindala = a*b
+print(f"Ristküliku ümbermõõt on {umbermoot} meetrit, ja pindala on {pindala} ruutmeetrit." )
+
+#Ülesanne 8
+kütus = float(input("Sisesta tangitud kütuse kogus: "))
+läbitud = float(input("Sisesta läbitud kilomeetrite arv: "))
+if läbitud > 0:
+    kütusekulu = (kütus / läbitud) * 100
+    print(f"Keskmine kütusekulu on {kütusekulu} liitrit 100 km kohta")
+else:
+    print("Viga: läbitud kilomeetrite arv peab olema suurem kui 0.")
+
+#Ülesanne 9
+kiirus = 29.9  
+minutid = float(input("Sisesta aeg rulluisutamisel: "))
+vahemaa = (kiirus / 60) * minutid  
+print(f"Rulluisutaja läbib {minutid} minutiga umbes {vahemaa} km.")
+
+
+#Ülesanne 10
+minutid_kasutajalt=int(input("Aeg minutides:"))
+tunnid=minutid_kasutajalt//60 # täisosa
+minutid=minutid_kasutajalt%60 # jääk
+print(f"{tunnid}:{minutid}".center(20,"*"))
