@@ -2,15 +2,18 @@ print(), Kuvame ekraanile tekst
 input(), sisestame info ja edastame tekstina
 float(), tekst konventeerib ujukomaarvusse
 int(), tekst konventeerib arvusse
-upper(), "S’NE"
-lower(), "sıne"
-capitalize(), "Sıne"
-type() m‰‰rab muutuja t¸¸bi
+upper(), "S√ïNE"
+lower(), "s√µne"
+capitalize(), "S√µne"
+type() m√§√§rab muutuja t√º√ºbi
 funktsioonid
-math, random moodulide funktsioonid: pi, round(),randint()
+math moodulide funktsioonid: pi, round(arv,kohtade_arv)
+random moodulide funktsioonid: randint()
 datetime moduli funktsioonid date.today(), strftime(), day, month, year
-calendar moduli monthrange(a,b)[b] kuu p‰evade arv
+calendar moduli monthrange(a,b)[b] kuu p√§evade arv
 try:
  ...
 except:
  ...
+ type() - m√§√§rab muutuja t√º√ºbi
+ center(s√ºmbolite_arv," ")
