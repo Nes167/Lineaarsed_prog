@@ -1,4 +1,4 @@
-from math import *
+from math import * 
 print("Ruudu karakteristikud")
 try:
     a=int(input('Sisesta ruudu külje pikkus => '))
