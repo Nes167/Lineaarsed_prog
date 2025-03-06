@@ -7,7 +7,7 @@ try:
         print("Ruudu pindala", S)
         P=4*a
         print("Ruudu ümbermõõt", P) 
-        di=a*sqrt(2) # Использование math.sqrt
+        di=a*sqrt(2) #Использование sqrt
         print("Ruudu diagonaal", round(di,2))
     else:
         print("külg ei saa olla 0 või vähem.")
