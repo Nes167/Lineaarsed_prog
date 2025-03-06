@@ -113,7 +113,7 @@ if alghind>700:
 else:
     print("Soodustus ei kehti.")
 
-Ülesanne 5
+#Ülesanne 5
 try:
     temp=float(input("Sisesta temperatuur: "))
     if temp>18:
