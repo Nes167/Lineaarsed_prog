@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>teema2_if_elif_else.py</StartupFile>
+    <StartupFile>Valiklaused (Ruutvõrrand).py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,6 +25,7 @@
     <Compile Include="Lineaarsed_prog.py" />
     <Compile Include="teema2_if_elif_else.py" />
     <Compile Include="Tund1_Funktsioonide_kasutamine.py" />
+    <Compile Include="Valiklaused %28Ruutvõrrand%29.py" />
     <Compile Include="vigade_otsing.py" />
   </ItemGroup>
   <ItemGroup>
