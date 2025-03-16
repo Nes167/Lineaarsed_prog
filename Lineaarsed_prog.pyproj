@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Kehamassiindeksi_(KMI)_kalkulaator.py</StartupFile>
+    <StartupFile>Kordused.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Kehamassiindeksi_%28KMI%29_kalkulaator.py" />
+    <Compile Include="Kordused.py" />
     <Compile Include="lihtsad_programmid.py" />
     <Compile Include="Lineaarsed_prog.py" />
     <Compile Include="teema2_if_elif_else.py" />
