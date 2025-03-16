@@ -1,71 +1,71 @@
-# #Ülesanne 1
-# try:
-#     arv=input("Sisesta arv: ")
-#     if arv.isnumeric():
-#         arv=int(arv)
-#         if arv>0:
-#             if arv%2==0 and arv!=0:
-#                 print(f"Arv {arv} on paaris.")
-#             elif arv==0:
-#                 print(f"Arv {arv} on määramatu.")
-#             else:
-#                 print(f"Arv {arv} on paaritu.")
-#         else:
-#             print(f"Arv {arv} on negatiivne")
-# except:
-#     print("Kirjuta numbreid")
+#Ülesanne 1
+try:
+    arv=input("Sisesta arv: ")
+    if arv.isnumeric():
+        arv=int(arv)
+        if arv>0:
+            if arv%2==0 and arv!=0:
+                print(f"Arv {arv} on paaris.")
+            elif arv==0:
+                print(f"Arv {arv} on määramatu.")
+            else:
+                print(f"Arv {arv} on paaritu.")
+        else:
+            print(f"Arv {arv} on negatiivne")
+except:
+    print("Kirjuta numbreid")
 
-# #Ülesanne 2
-# try:
-#     nurk1=float(input("Sisesta arv: "))
-#     nurk2=float(input("Sisesta arv: "))
-#     nurk3=float(input("Sisesta arv: "))
-#     if nurk1>0 and nurk2>0 and nurk3>0:
-#         print("Nurgad on positiivsed")
-#         if nurk1+nurk2+nurk3==180:
-#             print("See on kolmnurk")
-#             if nurk1==nurk2 and nurk2==nurk3 and nurk1==nurk3:
-#                 print("võrgkülgne kolmnurk")
-#             elif nurk1==nurk2 or nurk2==nurk3 or nurk1==nurk3:
-#                 print("võrdhaarne kolmnurk")
-#             else:
-#                 print("erikülgne kolmnurk")
-#         else:
-#             print("See ei ole kolmnurk")
-#     else:
-#         print("Negatiivsed nurgad ei soobi")
-# except:
-#     print("Sisesta ujukomaarvud!")
+#Ülesanne 2
+try:
+    nurk1=float(input("Sisesta arv: "))
+    nurk2=float(input("Sisesta arv: "))
+    nurk3=float(input("Sisesta arv: "))
+    if nurk1>0 and nurk2>0 and nurk3>0:
+        print("Nurgad on positiivsed")
+        if nurk1+nurk2+nurk3==180:
+            print("See on kolmnurk")
+            if nurk1==nurk2 and nurk2==nurk3 and nurk1==nurk3:
+                print("võrgkülgne kolmnurk")
+            elif nurk1==nurk2 or nurk2==nurk3 or nurk1==nurk3:
+                print("võrdhaarne kolmnurk")
+            else:
+                print("erikülgne kolmnurk")
+        else:
+            print("See ei ole kolmnurk")
+    else:
+        print("Negatiivsed nurgad ei soobi")
+except:
+    print("Sisesta ujukomaarvud!")
 
-# #Ülesanne 3
-# try:
-#     a=input("Kas soovite dešifreerida nädalapäeva järjekorranumbrit nimesse.").lower()
-#     if a=="jah":
-#         try:
-#             b=int(input("Sisesta nädalapäevanumber: "))
-#             if b in range (1,8):
-#                 if b==1:
-#                     print("esmaspäev")
-#                 elif b==2:
-#                     print("teisipäev")
-#                 elif b==3:
-#                     print("kolmapäev")
-#                 elif b==4:
-#                     print("neljapäev")
-#                 elif b==5:
-#                     print("reede")
-#                 elif b==6:
-#                     print("laupäev")
-#                 elif b==7:
-#                     print("pühapäev")
-#         except:
-#             print("Numbrid vahemikust 1-7")
-#     else:
-#         print("ok")
-# except:
-#     print("Viga! on vaja vastus JAH või EI")
+#Ülesanne 3
+try:
+    a=input("Kas soovite dešifreerida nädalapäeva järjekorranumbrit nimesse.").lower()
+    if a=="jah":
+        try:
+            b=int(input("Sisesta nädalapäevanumber: "))
+            if b in range (1,8):
+                if b==1:
+                    print("esmaspäev")
+                elif b==2:
+                    print("teisipäev")
+                elif b==3:
+                    print("kolmapäev")
+                elif b==4:
+                    print("neljapäev")
+                elif b==5:
+                    print("reede")
+                elif b==6:
+                    print("laupäev")
+                elif b==7:
+                    print("pühapäev")
+        except:
+            print("Numbrid vahemikust 1-7")
+    else:
+        print("ok")
+except:
+    print("Viga! on vaja vastus JAH või EI")
 
-#Ülesanne 4
+Ülesanne 4
 päev=int(input("Sisesta sünnipäev: "))
 kuu=int(input("Sisesta kuu: "))
 if kuu==3 and päev>=21 or kuu==4 and päev<=19:
@@ -93,3 +93,40 @@ elif kuu==1 and päev>=20 or kuu==2 and päev<=18:
 elif kuu==2 and päev>=19 or kuu==3 and päev<=20:
     märk="Kalad"
 print(f"Sa oled {märk}")
+
+Ülesanne 5
+arv = input("Sisesta arv: ")
+try:
+    num = float(arv)
+    if num==int(num):
+        print(f"Täisarv {int(num)}, 50% arvust on {int(num) * 0.5}")
+    else: 
+        print(f"Ujukomaarv {num}, 70% ujukomaarvust on {num * 0.7}")
+except:
+    print(f"Sisesta ainult arv")
+
+#Ülesanne 6
+soov = input("Kas soovite lahendada ruutvõrrandit? (jah/ei): ").lower()
+if soov == "jah":
+    try:
+        a = float(input("Sisesta a: "))
+        b = float(input("Sisesta b: "))
+        c = float(input("Sisesta c: "))
+        if a == 0:
+            print("See ei ole ruutvõrrand, sest a ei tohi olla 0.")
+        else:
+            D = b**2 - 4 * a * c
+            print(f"D = {D}")
+            if D > 0:
+                x1 = (-b + math.sqrt(D)) / (2 * a)
+                x2 = (-b - math.sqrt(D)) / (2 * a)
+                print(f"Võrrandil on kaks lahendit: x1 = {x1}, x2 = {x2}")
+            elif D == 0:
+                x = -b / (2 * a)
+                print(f"Võrrandil on üks lahend: x = {x}")
+            else:
+                print("Võrrandil ei ole reaalset lahendit.")
+    except:
+        print("Viga: Palun sisestage arvulised väärtused!")
+else:
+    print("Head aega!")
