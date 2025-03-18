@@ -53,32 +53,88 @@
 # #clear
 # list_sõne2=list_sõne.clear() #Очищает список
 
-#Ülesanne 1
-from string import *
-vokaali=["a","o","e","i","u","ü","õ","ä","ö"]
-konsonanti="qwrtypsdfghjklzxcvbnm"
-numbrid=digits
-märkid=punctuation
-v=k=n=m=t=0
-tekst=input("Sisend sõna või lause: ").lower()
-tekst_list=list(tekst)
-if tekst_list.index(" ")>0:
-    print("See on lause")
-    for s in tekst_list:
-        if s in vokaali:
-            v+=1
-        elif s in konsonanti:
-            k+=1
-        elif s in numbrid:
-            n+=1
-        elif s in märkid:
-            m+=1
-        elif s==" ":
-            t+=1
-    print(f"Vokaali: {v} \nKonsonanti: {k} \nNumbrid: {n} \nMärkid: {m} \nTühik: {t}")
-else:
-    print(f"kokku on {len(tekst_list)}")
-    if s in vokaali:
-            v+=1
-    elif s in konsonanti:
-        k+=1
+# #Ülesanne 1
+# from string import *
+# vokaali=["a","o","e","i","u","ü","õ","ä","ö"]
+# konsonanti="qwrtypsdfghjklzxcvbnm"
+# numbrid=digits
+# märkid=punctuation
+# v=k=n=m=t=0
+# tekst=input("Sisend sõna või lause: ").lower()
+# tekst_list=list(tekst)
+# if tekst_list.index(" ")>0:
+#     print("See on lause")
+#     for s in tekst_list:
+#         if s in vokaali:
+#             v+=1
+#         elif s in konsonanti:
+#             k+=1
+#         elif s in numbrid:
+#             n+=1
+#         elif s in märkid:
+#             m+=1
+#         elif s==" ":
+#             t+=1
+#     print(f"Vokaali: {v} \nKonsonanti: {k} \nNumbrid: {n} \nMärkid: {m} \nTühik: {t}")
+# else:
+#     print(f"kokku on {len(tekst_list)}")
+#     if s in vokaali:
+#             v+=1
+#     elif s in konsonanti:
+#         k+=1
+#     print(f"Vokaali: {v} \nKonsonanti: {k}")
+
+# #Ülesanne 2
+# #2.1
+# nimed=[]
+# for a in range (5):
+#     nimi=input("Sisesta nimi: ")
+#     nimed.append(nimi)
+# nimed.sort()
+# print(nimed)
+# print(nimed[-1])
+# muuda=input("Kas soovite nimi muuta? jah/ei ").lower()
+# if muuda == "jah":
+#     vana_nimi=input("Mis nimi te soovite muuta?: ")
+#     if vana_nimi in nimed:
+#         uus_nimi=input("Sisesta uus nimi: ")
+#         ind=nimed.index(vana_nimi)
+#         nimed[ind]=uus_nimi
+#         nimed.sort()
+#         print(f"Uuendatud nimed: {nimed}")
+#     else:
+#         print("Sellist nime loendis ei ole")
+# else:
+#     print("ok")
+
+# #2.2
+# kord_opilased=["Juhan","Kati","Mario","Mario","Mati","Mati"]
+# print(kord_opilased)
+# opilased=list(set(kord_opilased))
+# print(opilased)
+
+# #2.3
+# vanus=5,13,25,9,20,17,11,10,8,24
+# print(vanus)
+# min_vanus=min(vanus)
+# print(f"\nKõige noorem on {min_vanus}")
+# max_vanus=max(vanus)
+# print(f"Kõige vanem on {max_vanus}")
+# summa=sum(vanus)
+# print(f"Vanuste summa on {summa}")
+# keskmine=summa/len(vanus)
+# print(f"Keskmine vanus on {keskmine}")
+
+# #Ülesanne 4
+# region={"1":"Tallinn","2":"Narva, Narva-Jõesuu","3":"Kohtla-Järve","4":"Ida-Virumaa, Lääne-Virumaa, Jõgevamaa","5":"Tartu linn", "6":"Tartumaa, Põlvamaa, Võrumaa, Valgamaa","7":" Viljandimaa, Järvamaa, Harjumaa, Raplamaa","8": "Pärnumaa","9":"Läänemaa, Hiiumaa, Saaremaa"}
+# post_indeks=input("Sisestage postiindeks: ")
+# if post_indeks.isdigit() and len(post_indeks) == 5:
+#     maakond=region.get(post_indeks[0])
+#     print(f"Teie postiindeks kuulub piirkonda: {maakond}")
+#     if post_indeks[0] in ["1","2","3"]:
+#         print("Olge kodus")
+#     else:
+#         print("Kandke maske!")
+# else:
+#     print("Vigane sisend!")
+
