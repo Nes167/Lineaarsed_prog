@@ -125,6 +125,11 @@
 # keskmine=summa/len(vanus) #средний возраст
 # print(f"Keskmine vanus on {keskmine}")
 
+# #Ulesanne 3
+# sisend=[8,12,25,38,67,15,48] 
+# for number in sisend: #Используем значения чисел в списке и создаём гистограмму, используя звезды.
+#     print('*' *number)
+
 # #Ülesanne 4
 # region={"1":"Tallinn","2":"Narva, Narva-Jõesuu","3":"Kohtla-Järve","4":"Ida-Virumaa, Lääne-Virumaa, Jõgevamaa","5":"Tartu linn", "6":"Tartumaa, Põlvamaa, Võrumaa, Valgamaa","7":" Viljandimaa, Järvamaa, Harjumaa, Raplamaa","8": "Pärnumaa","9":"Läänemaa, Hiiumaa, Saaremaa"} #Список со значениями, если 1 то Таллинн, если 2 то Нарва, Нарва-Йыесуу, если 3 то Кохтла-Ярве и т.д.
 # post_indeks=input("Sisestage postiindeks: ") #Просит ввести индекс
