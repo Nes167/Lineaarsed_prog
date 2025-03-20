@@ -160,7 +160,7 @@ if nimi.isalpha(): #проверем чтобы только из букв
 else:
     print("Viga! Peab sisaldama ainult tähti") #если имя введено не только из букв, то выдаём ошибку
 
-Ülesanne 17
+#Ülesanne 17
 sõna_list=["auto","jalgrattas","laev","lennuk","rong","buss","tramm"] #список транспорта
 leia_sõna=input("Milline transport te otsite? ").lower() #спрашиваем какой транспорт ищем, сразу делаем маленькими буквами
 leitud_sõna=[s for s in sõna_list if leia_sõna in s.lower()] #проверяем содержится это слово в нашем списке
