@@ -26,6 +26,7 @@
     <Compile Include="Kordused.py" />
     <Compile Include="lihtsad_programmid.py" />
     <Compile Include="Lineaarsed_prog.py" />
+    <Compile Include="Praktiline_iseseisevtöö_Isikukood.py" />
     <Compile Include="teema2_if_elif_else.py" />
     <Compile Include="Tund1_Funktsioonide_kasutamine.py" />
     <Compile Include="Valiklaused %28Ruutvõrrand%29.py" />

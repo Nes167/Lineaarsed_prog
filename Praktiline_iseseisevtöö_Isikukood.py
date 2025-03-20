@@ -1,0 +1,3 @@
+
+isikukood=input("Sisesta isikukood: ")
+
