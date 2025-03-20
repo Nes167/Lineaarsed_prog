@@ -22,11 +22,22 @@ while True:
                         # summa=0
                         # for i, s in enumerate(ik_list): #i=0,1,2,3,4,5... s="3","12"...
                         #     summa+=(i+1)+int(s)
-                        aste1=[1,2,3,4,5,6,7,8,9,]
-                        aste2=[3,4,5,6,7,8,9,1,2,3]
-                        ik_n_list=[] #[4,7,6,1,0,2,3,4,5]
-                        for s in range(ik_list):
-                            ik_n_list.append(int(s))
+                        # aste1=[1,2,3,4,5,6,7,8,9,]
+                        # aste2=[3,4,5,6,7,8,9,1,2,3]
+                        # ik_n_list=[] #[4,7,6,1,0,2,3,4,5]
+                        # for s in range(ik_list):
+                        #     ik_n_list.append(int(s))
+                        sum1=int(ik_list[0])*1+int(ik_list[1])*2+int(ik_list[2])*3+int(ik_list[3])*4+int(ik_list[4])*5+int(ik_list[5])*6+int(ik_list[6])*7+int(ik_list[7])*8+int(ik_list[8])*9+int(ik_list[9])*1
+                        sum2=round(sum1/11)
+                        sum3=sum2*11
+                        sum8=sum1-sum3
+                        print(sum8)
+                        sum4=int(ik_list[0])*3+int(ik_list[1])*4+int(ik_list[2])*5+int(ik_list[3])*6+int(ik_list[4])*7+int(ik_list[5])*8+int(ik_list[6])*9+int(ik_list[7])*1+int(ik_list[8])*2+int(ik_list[9])*3
+                        sum5=round(sum4/11)
+                        sum6=sum5*11
+                        sum7=sum4-sum6
+                        print(sum7)
+                      
                     else:
                         print("6,7 sümbolid ei ole ok ")
                         continue
