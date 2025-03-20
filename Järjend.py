@@ -175,6 +175,15 @@
 # print("Järjend:", tähed) #буквы которые мы используем
 # print("Teine järjend:", korduvad_tähed) #те же буквы, но повторяются взависимости от позиции
 
+# #12 ülesanne
+# import random
+# numbrid = [random.randint(1, 100) for s in range(10)] # Создаем список из 10 случайных чисел от 1 до 100
+# print(f"Loend: {numbrid}")
+# min_index = numbrid.index(min(numbrid)) # Находим индексы минимального элемента
+# max_index = numbrid.index(max(numbrid)) # Находим индексы максимального элемента
+# numbrid[min_index], numbrid[max_index] = numbrid[max_index], numbrid[min_index] # Меняем местами минимальный и максимальный элементы
+# print(f"Loend pärast vahetamist: {numbrid}")
+
 # #Ülesanne 17
 # sõna_list=["auto","jalgrattas","laev","lennuk","rong","buss","tramm"] #список транспорта
 # leia_sõna=input("Milline transport te otsite? ").lower() #спрашиваем какой транспорт ищем, сразу делаем маленькими буквами
