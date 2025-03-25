@@ -12,7 +12,7 @@ from Teema5_funktsioonide_kasutamine import *
 
 #Ülesanne2
 aasta=int(input("Mis aasta tahad kontrollida? "))
-if aasta<0:
+if aasta>0:
     v=is_year_leap(aasta)
     print(v)
     if v:
