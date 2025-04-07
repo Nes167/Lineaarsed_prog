@@ -64,6 +64,10 @@ def Väiksem_palk(p:list,i:list):
 
 def sorteerimine_kasvav(p:list,i:list)->any:
     """ Упорядочить зарплаты в порядке возрастания вместе с именами
+    :param p: Список зарплат
+    :type p: list
+    :param i: Список имён
+    :type i: list
     """
     for n in range(0,len(i)):
         for m in range(n,len(i)):
@@ -74,12 +78,16 @@ def sorteerimine_kasvav(p:list,i:list)->any:
 
 def sorteerimine_kahanev(p:list,i:list)->any:
     """ Упорядочить зарплаты в порядке убывания вместе с именами
+    :param p: Список зарплат
+    :type p: list
+    :param i: Список имён
+    :type i: list
     """
     for n in range(0,len(i)):
         for m in range(n,len(i)):
             if p[n]<p[m]:
                 p[n],p[m]=p[m],p[n]
-                i[n],i[m]=i[m],i[m]
+                i[n],i[m]=i[m],i[n]
     return p,i
 
 def Võrdsed_palgad(p:list,i:list):
