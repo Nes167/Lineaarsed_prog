@@ -1,3 +1,4 @@
+
 p=[]
 i=[]
 def Lisa_andmed(p:list,i:list):
@@ -77,6 +78,24 @@ def sorteerimine_kahanev(p:list,i:list)->any:
     for n in range(0,len(i)):
         for m in range(n,len(i)):
             if p[n]<p[m]:
-                p[m],p[n]=p[n],p[m]
-                i[m],i[n]=i[n],i[m]
+                p[n],p[m]=p[m],p[n]
+                i[n],i[m]=i[m],i[m]
     return p,i
+
+def Võrdsed_palgad(p:list,i:list):
+    """ Узнать, кто получает одинаковую зарплату, найти сколько таких людей вывести их данные на экран
+    """
+    hulk=set(p)
+    print(hulk)
+
+def palk_otsimine(p:list,i:list):
+    """Сделать поиск зарплаты по имени человека. 
+    """
+    nimi=input("Sisesta nimi otsinguks: ")
+    leitud=False
+    for o in range(len(i)):
+        if i[o]==nimi:
+            print(f"{i[o]} saab palka {p[o]}")
+            leitud=True
+        else:
+            print("Sellise nimega inimest ei leitud.")
