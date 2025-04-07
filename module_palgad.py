@@ -87,6 +87,15 @@ def Võrdsed_palgad(p:list,i:list):
     """
     hulk=set(p)
     print(hulk)
+    for palk in hulk:
+        k=p.count(palk)
+        if k>1:
+            print(f"Palk {palk}")
+            ind=p.index(palk)
+            for j in range(k):
+                ind=p.index(palk,ind)
+                print(f"Saab kätte {i[ind]}")
+                ind+=1
 
 def palk_otsimine(p:list,i:list):
     """Сделать поиск зарплаты по имени человека. 
@@ -99,3 +108,4 @@ def palk_otsimine(p:list,i:list):
             leitud=True
         else:
             print("Sellise nimega inimest ei leitud.")
+
