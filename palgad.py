@@ -39,7 +39,7 @@ while True:
     elif v==12:
         esimene_täht(palgad,inimesed)
 
-
+      
 
 
 
