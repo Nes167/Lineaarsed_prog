@@ -14,11 +14,10 @@ def Lisa_andmed(p:list,i:list):
                     print("Palk on arv!")
                 break
                 print("Andmed on lisatud!")
-                p.append(palk)
-                i.append(nimi)
         except:
             print("Kirjuta ainult tähtede kasutades!")
-
+    p.append(palk)
+    i.append(nimi)
         
 def Kustuta_andmed(p:list,i:list):
     """ Удалить человека и его зарплату
@@ -120,28 +119,67 @@ def palk_otsimine(p:list,i:list):
     except:
         print("Viga!")
 
-# def filtr_palgad(p:list,i:list):
-#     try:
-#         summa=float(input("Sisesta summa mille järgi filtreerida: "))
-#         valik=input(f"Kas otsida inimesi, kelle palk on rohkem kui {summa}? ").lower()
-#         if valik=="jah":
-#             rohkem=True
-#         else:
-#             rohkem=False
-#         valitud_inimesed=[(i[j],p[j]) for j in range(len(p)) if rohkem]
 
-def tulumaks(p:list,i:list):
-    """Вычислить зарплату, которую человек получит на руки после вычисления подоходного налога.
+def filtr_palgad(p: list, i: list) -> None:
+    """Вывести список людей, у которых зарплата больше или меньше заданной пользователем суммы.
     """
-    palk=float(input("Sisesta palgasumma: "))
-    summa=palk*0.78
-    km=palk*0.22
-    print(f"Netto palk on {summa}. Käibemaks on {km}")
+    try:
+        summa = float(input("Sisesta summa, mille järgi filtreerida: "))  # Получаем сумму
+        valik = input("Kas otsida inimesi, kelle palk on rohkem kui määratud summa? (jah/ei): ").strip().lower()  # Определяем, искать ли зарплаты больше или меньше
+        if valik=="jah":
+            rohkem=True
+        else:
+            rohkem=False
+        valitud_inimesed = [(i[j], p[j]) for j in range(len(p)) if (rohkem and p[j] > summa) or (not rohkem and p[j] < summa)] # Фильтрация индексов с зарплатами больше или меньше указанной суммы
+        if valitud_inimesed:  # Выводим результаты
+            print(f"Inimesed, kelle palk on {'rohkem' if rohkem else 'vähem'} kui {summa}:")
+            for nimi, palk in valitud_inimesed:
+                print(f"{nimi}: {palk}")
+        else:
+            print("Ei leidnud inimesi, kes vastaksid kriteeriumitele.")
+    except:
+        print("Palun sisestage korrektne number!")
 
+def tulumaks(p: list, i: list) -> None:
+    """Вычислить зарплаты после удержания 22% налога.
+    """
+    try:
+        print("Neto palgad pärast 22% tulumaksu:")
+        for j in range(len(p)):
+            neto = p[j] * 0.78
+            print(f"{i[j]}: {neto}")
+    except:
+        print("Viga tulumaksu arvutamisel:", e)
 
+def esimene_täht(p:list,i:list):
+    """Найти имена начинающиеся на введенную букву и их зарплаты. Отобразить данные в столбик (Имя-зарплата)
+    """
+    while True:
+        letter = input("Sisesta täht: ")
+        if (len(letter) == 1):
+            break
+        print("Sisesta ainult üks täht!")
+    for i in range(len(palgad)):
+        if (inimesed[i][0].lower()==letter.lower()):
+            print(inimesed[i], "-", palgad[i])
 
-# def top_inimesed(p:list, i:list):
-#     """Топ самых бедных и самых богатых человека
-#     """
-#     maks=
+def top_inimesed(p: list, i: list) -> None:
+    """
+    Вывести топ T самых богатых и бедных людей по зарплате.
+    """
+    try:
+        n=int(input("Mitu inimest näidata topis: "))
+        if n <= 0:
+            print("Arv peab olema positiivne.")
+            return
+        rikkad = sorted(zip(p, i), reverse=True)[:n]  # Копируем и сортируем списки без изменения оригиналов
+        vaesed = sorted(zip(p, i))[:n]
+        print("Rikkaimad:")
+        for palk, nimi in rikkad:
+            print(f"{nimi}: {palk}")
+        print("\nVaeseimad:")
+        for palk, nimi in vaesed:
+            print(f"{nimi}: {palk}")
+    except:
+        print("Palun sisestage korrektne arv!")
 
