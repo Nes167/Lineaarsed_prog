@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>palgad.py</StartupFile>
+    <StartupFile>D_vitamin.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="4.3_Wordle.py" />
+    <Compile Include="D_vitamin.py" />
+    <Compile Include="D_vitamin_module.py" />
     <Compile Include="module_palgad.py" />
     <Compile Include="palgad.py" />
     <Compile Include="Teema5_Kasutajate_funktsioonide_loomine.py" />

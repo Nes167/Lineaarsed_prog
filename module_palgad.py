@@ -182,7 +182,7 @@ def top_inimesed(p: list, i: list) -> None:
         print("Rikkaimad:")
         for palk, nimi in rikkad:
             print(f"{nimi}: {palk}")
-        print("\nVaeseimad:")
+        print("Vaeseimad:")
         for palk, nimi in vaesed:
             print(f"{nimi}: {palk}")
     except:
