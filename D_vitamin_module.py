@@ -45,6 +45,7 @@ def keskmine_vitamiin_d(d_vitamiin):
     summa = sum(d_vitamiin) #Складываем все значения
     keskmine = summa / len(d_vitamiin) #Делим на количество
     print("Keskmine D-vitamiini tase:", round(keskmine, 2), "mcg/l") #Выводим результат
+    return keskmine
 
 
 def top_k_vitamiin_d(nimed, d_vitamiin):
@@ -84,9 +85,7 @@ def alla_keskmise(nimed, d_vitamiin):
     :param list nimed: Список имён пациентов
     :param list d_vitamiin: Список значений витамина Д
     """
-    summa = sum(d_vitamiin) 
-    keskmine = summa / len(d_vitamiin) #Считаем среднее значение витамина Д
-    print(f"Keskmine D-vitamiini tase: {round(keskmine, 2)} mcg/l")
+    keskmine = keskmine_vitamiin_d(d_vitamiin)
     print("Patsiendid alla keskmise:")
     alla=zip(nimed, d_vitamiin)
     for nimi, d_tase in alla: #Ищем пациентов c значением ниже среднего
