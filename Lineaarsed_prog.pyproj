@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>D_vitamin.py</StartupFile>
+    <StartupFile>main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,8 +24,11 @@
     <Compile Include="4.3_Wordle.py" />
     <Compile Include="D_vitamin.py" />
     <Compile Include="D_vitamin_module.py" />
+    <Compile Include="main.py" />
     <Compile Include="module_palgad.py" />
     <Compile Include="palgad.py" />
+    <Compile Include="sonastik.py" />
+    <Compile Include="sõnastik.py" />
     <Compile Include="Teema5_Kasutajate_funktsioonide_loomine.py" />
     <Compile Include="Teema5_funktsioonide_kasutamine.py" />
     <Compile Include="isikukood.py" />
