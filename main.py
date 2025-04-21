@@ -1,9 +1,8 @@
 from sonastik import *
-print("Tere tulemast kolme keele sõnastikku!")
-sonad = loo_sonastik()
+valjasta_tervitus()
+
 while True:
-    print("\nMenu:")
-    print("1 - Tõlgi sõna\n2 - Lisa uus sõna \n3 - Paranda sõna\n4 - Kuva kõik sõnad\n5 - Testi teadmisi\n0 - Välja")
+    kuva_menu()
     valik = input("\nSisesta valik: ")
     if valik == "1":
         allikas, siht=vali_keelte_suund()
@@ -16,7 +15,9 @@ while True:
     elif valik == "4":
         kuva_sonad(sonad)    
     elif valik == "5":
-        testi_teadmisi(sonad)       
+        testi_teadmisi(sonad) 
+    elif valik == "6":
+        text_to_speech() 
     elif valik == "0":
         break
     else:
