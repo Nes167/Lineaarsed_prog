@@ -6,8 +6,9 @@ while True:
     valik = input("\nSisesta valik: ")
     if valik == "1":
         allikas, siht=vali_keelte_suund()
-        sona=input(f"Sisesta sõna({allikas})")
-        print(f"Tõlge: {tolkija(sonad,allikas, siht, sona)}")   
+        sona=input(f"Sisesta sõna({allikas}) ")
+        tulemus=tolkija(sonad,allikas, siht, sona)
+        print(f"Tõlge: {tulemus}")   
     elif valik == "2":
          lisa_sona(sonad)
     elif valik == "3":

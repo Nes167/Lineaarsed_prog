@@ -56,21 +56,22 @@ def vali_keelte_suund():
 def paranda_sona(sonad):
     """Исправление слова
     """
-    parandatav = kysi_kasutajalt_sisestus("Sisesta parandatav sõna: ")  #Запрашиваем у пользователя слово для исправления через функцию kysi_kasutajalt_sisestus
-    kirje = otsi_sona(sonad, parandatav)  #Используем функцию otsi_sona для поиска слова в словаре
+    parandatav=kysi_kasutajalt_sisestus("Sisesta parandatav sõna: ")  #Запрашиваем у пользователя слово для исправления через функцию kysi_kasutajalt_sisestus
+    kirje=otsi_sona(sonad, parandatav)  #Используем функцию otsi_sona для поиска слова в словаре
     if kirje:  #Если слово найдено
-        kirje['est'] = kysi_kasutajalt_sisestus("Uus eesti sõna: ")  #спрашиваем новые переводы через функцию
-        kirje['rus'] = kysi_kasutajalt_sisestus("Uus vene sõna: ")  
-        kirje['eng'] = kysi_kasutajalt_sisestus("Uus inglise sõna: ")  
+        kirje['est']=kysi_kasutajalt_sisestus("Uus eesti sõna: ")  #спрашиваем новые переводы через функцию
+        kirje['rus']=kysi_kasutajalt_sisestus("Uus vene sõna: ")  
+        kirje['eng']=kysi_kasutajalt_sisestus("Uus inglise sõna: ")  
         print("Parandatud!") 
     else:
         print("Sõna ei leitud!")  #Если слово не найдено
 
 def kysi_kasutajalt_sisestus(tekst):
-    """Запрашиваем ввод от пользователя и проверяем, что он не пустой."""
+    """Запрашиваем ввод от пользователя и проверяем, что он не пустой
+    """
     while True:
-        sisend = input(tekst).strip().lower()  #Запрашиваем ввод, без лишних пробелов и маленькими буквами
-        if sisend == "":  #Если строка пустая
+        sisend=input(tekst).strip().lower()  #Запрашиваем ввод, без лишних пробелов и маленькими буквами
+        if sisend=="":  #Если строка пустая
             print("Tühja ei tohi jätta!")  #то пишем что нельзя оставить пустой
         else:
             return sisend  #Возвращаем введённое слово
@@ -78,17 +79,17 @@ def kysi_kasutajalt_sisestus(tekst):
 def otsi_sona(sonad, sona):
     """Ищет слово во всех значениях словаря и возвращает его запись
     """
-    for k in sonad:  # Перебираем все записи в словаре
-        if sona in k.values():  # Если слово найдено в любом из языков
-            print(f"Leitud sõna: {k}")  # Показываем найденное слово и все переводы
-            return k  # Возвращаем слово
-    return None  # Если слово не найдено
+    for k in sonad:  #Перебираем все записи в словаре
+        if sona in k.values():  #Если слово найдено в любом из языков
+            print(f"Leitud sõna: {k}")  #Показываем найденное слово и все переводы
+            return k  #Возвращаем слово
+    return None  #Если слово не найдено
 
 
 def testi_teadmisi(sonad):
     """Проверка знаний
     """
-    allikas, siht = vali_keelte_suund() #Получаем языки перевода
+    allikas, siht=vali_keelte_suund() #Получаем языки перевода
     õige=0
     kogus=int(input("Mitu sõna soovite kontrollida? ")) #Запрашиваем количество слов
     for _ in range(kogus): #Повторяем нужное число раз
