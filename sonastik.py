@@ -70,7 +70,7 @@ def kysi_kasutajalt_sisestus(tekst):
     """Запрашиваем ввод от пользователя и проверяем, что он не пустой
     """
     while True:
-        sisend=input(tekst).strip().lower()  #Запрашиваем ввод, без лишних пробелов и маленькими буквами
+        sisend=input(tekst).lower()  #Запрашиваем ввод, маленькими буквами
         if sisend=="":  #Если строка пустая
             print("Tühja ei tohi jätta!")  #то пишем что нельзя оставить пустой
         else:
@@ -116,6 +116,6 @@ def kuva_sonad(sonad):
 
 def text_to_speech():
     mootor = pyttsx3.init() #Инициализация "голоса"
-    sona = input("Sisesta sõna: ").strip().lower() #Запрашиваем слово
+    sona = input("Sisesta sõna: ").lower() #Запрашиваем слово
     mootor.say(sona) #Озвучиваем его
     mootor.runAndWait() #Запускаем произношение
