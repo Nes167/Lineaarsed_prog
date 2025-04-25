@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>main.py</StartupFile>
+    <StartupFile>main2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,9 +24,11 @@
     <Compile Include="4.3_Wordle.py" />
     <Compile Include="D_vitamin.py" />
     <Compile Include="D_vitamin_module.py" />
+    <Compile Include="main2.py" />
     <Compile Include="main.py" />
     <Compile Include="module_palgad.py" />
     <Compile Include="palgad.py" />
+    <Compile Include="sonastik2.py" />
     <Compile Include="sonastik.py" />
     <Compile Include="sõnastik.py" />
     <Compile Include="Teema5_Kasutajate_funktsioonide_loomine.py" />
@@ -39,12 +41,15 @@
     <Compile Include="Lineaarsed_prog.py" />
     <Compile Include="Praktiline_iseseisevtöö_Isikukood.py" />
     <Compile Include="teema2_if_elif_else.py" />
+    <Compile Include="teema7_txt.py" />
     <Compile Include="Tund1_Funktsioonide_kasutamine.py" />
     <Compile Include="Valiklaused %28Ruutvõrrand%29.py" />
     <Compile Include="vigade_otsing.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="funktsioonid.txt" />
+    <Content Include="loetelu.txt" />
+    <Content Include="sonad.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
