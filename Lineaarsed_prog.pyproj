@@ -44,6 +44,8 @@
     <Compile Include="Praktiline_iseseisevtöö_Isikukood.py" />
     <Compile Include="teema2_if_elif_else.py" />
     <Compile Include="teema7_txt.py" />
+    <Compile Include="telefoniraamat_funktsioon.py" />
+    <Compile Include="telefoniraamat_main.py" />
     <Compile Include="Tund1_Funktsioonide_kasutamine.py" />
     <Compile Include="Valiklaused %28Ruutvõrrand%29.py" />
     <Compile Include="vigade_otsing.py" />
@@ -53,6 +55,7 @@
     <Content Include="funktsioonid.txt" />
     <Content Include="loetelu.txt" />
     <Content Include="sonad.txt" />
+    <Content Include="telefoniraamat.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
