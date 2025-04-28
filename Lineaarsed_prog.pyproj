@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>main2.py</StartupFile>
+    <StartupFile>e-kiri_main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,6 +24,8 @@
     <Compile Include="4.3_Wordle.py" />
     <Compile Include="D_vitamin.py" />
     <Compile Include="D_vitamin_module.py" />
+    <Compile Include="e-kiri_main.py" />
+    <Compile Include="Ekirja_saatmine_ja_saamine.py" />
     <Compile Include="main2.py" />
     <Compile Include="main.py" />
     <Compile Include="module_palgad.py" />
@@ -47,6 +49,7 @@
     <Compile Include="vigade_otsing.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FELV-cat.jpg" />
     <Content Include="funktsioonid.txt" />
     <Content Include="loetelu.txt" />
     <Content Include="sonad.txt" />
