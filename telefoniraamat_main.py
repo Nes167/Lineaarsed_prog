@@ -13,15 +13,15 @@ while True:
     elif valik == "3":
         otsi_kontakt(telefoniraamat)     
     elif valik == "4":
-        kustuta_kontakt()    
+        kustuta_kontakt(telefoniraamat)    
     elif valik == "5":
         paranda_kontakt(telefoniraamat) 
     elif valik == "6":
-        sorteeri_kontakt()
+        sorteeri_kontakt(telefoniraamat)
     elif valik == "7":
         saada_kiri()
     elif valik == "0":
-        salvesta_sonad(fail,telefoniraamat)
+        Kirjutafailisse(fail,telefoniraamat)
         break
     else:
         print("Viga! Proovi veel kord.")
