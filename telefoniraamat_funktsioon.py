@@ -62,12 +62,14 @@ def kustuta_kontakt(telefoniraamat):
 
 
 def sorteeri_kontakt(telefoniraamat):
+    """ Сортировка контактов по выбору
+    """
     print("Sorteerimise valikud: nimi / email / telefon")
     by=input("Sisesta valik: ").lower()
     if by in ["nimi", "telefon", "email"]:
         n=len(telefoniraamat)
         for i in range(n):
-            for j in range(i+1,n):
+            for j in range(i,n):
                 if telefoniraamat[i][by].lower()>telefoniraamat[j][by].lower():
                     telefoniraamat[i],telefoniraamat[j]=telefoniraamat[j],telefoniraamat[i]
         print("Kontaktid on sorditud.")
@@ -79,13 +81,13 @@ def saada_kiri():
     smtp_server="smtp.gmail.com"
     smtp_port=587
     kellelt="anastassiamayba@gmail.com"
-    parool=input("Rakenduste parool") #gjfk fbvi nfjk hoyu
+    parool=input("Rakenduste parool: ") #gjfk fbvi nfjk hoyu
     context=ssl.create_default_context()
     msg=EmailMessage()
-    msg['Subject']="Test"
+    msg['Subject']="Tere!!!"
     msg['From']=kellelt
     msg['To']=kellele
-    msg.set_content("Tere")
+    msg.set_content("Tere!")
     try:
         server=smtplib.SMTP(smtp_server,smtp_port)
         server.starttls(context=context)

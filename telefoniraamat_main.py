@@ -4,7 +4,7 @@ telefoniraamat=loefailist(fail)
 
 while True:
     print("Menu:")
-    print("1 - Näita kõiki kontakte\n2 - Lisa uus kontakt\n3 - Otsi kontakti nime järgi\n4 - Kustuta kontakt\n5 - Muuda kontakt\n6 - Sorteeri kontakt\n7-Saada e-kiri kontaktile\n0 - Välja")
+    print("1 - Näita kõiki kontakte\n2 - Lisa uus kontakt\n3 - Otsi kontakti nime järgi\n4 - Kustuta kontakt\n5 - Muuda kontakt\n6 - Sorteeri kontakt\n7 - Saada e-kiri kontaktile\n0 - Välja")
     valik = input("\nSisesta valik: ")
     if valik == "1":
         kuva_kontaktid(telefoniraamat)
