@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>teema8_matplotlib.py</StartupFile>
+    <StartupFile>teema8.2_mäed.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -44,6 +44,7 @@
     <Compile Include="Praktiline_iseseisevtöö_Isikukood.py" />
     <Compile Include="teema2_if_elif_else.py" />
     <Compile Include="teema7_txt.py" />
+    <Compile Include="teema8.2_mäed.py" />
     <Compile Include="teema8_matplotlib.py" />
     <Compile Include="telefoniraamat_funktsioon.py" />
     <Compile Include="telefoniraamat_main.py" />
@@ -55,6 +56,8 @@
     <Content Include="FELV-cat.jpg" />
     <Content Include="funktsioonid.txt" />
     <Content Include="loetelu.txt" />
+    <Content Include="maed.txt" />
+    <Content Include="rahvaarv.txt" />
     <Content Include="sonad.txt" />
     <Content Include="telefoniraamat.txt" />
   </ItemGroup>

@@ -1,5 +1,45 @@
-# import matplotlib.pyplot as plt
-# import numpy as np
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 1. Failist lugemine
+linnad = []
+rahvaarvud = []
+
+with open("rahvaarv.txt", encoding="utf-8") as f:
+    for rida in f:
+        osad = rida.strip().split()
+        linn = " ".join(osad[:-1])
+        arv = int(osad[-1])
+        linnad.append(linn)
+        rahvaarvud.append(arv)
+
+# 2. NumPy array töötluseks
+arvud_np = np.array(rahvaarvud)
+
+# 3. Statistika
+koguarv = arvud_np.sum()
+keskmine = arvud_np.mean()
+suurim = arvud_np.max()
+väikseim = arvud_np.min()
+suurima_linn = linnad[np.argmax(arvud_np)]
+väikseima_linn = linnad[np.argmin(arvud_np)]
+
+# 4. Tulemuste printimine
+print(f"Koguarv: {koguarv}")
+print(f"Keskmine: {keskmine:.1f}")
+print(f"Suurim: {suurima_linn} ({suurim})")
+print(f"Väikseim: {väikseima_linn} ({väikseim})")
+
+# 5. Tulpdiagramm
+plt.figure(figsize=(10, 6))
+plt.bar(linnad, rahvaarvud, color="skyblue")
+plt.title("Eesti linnade rahvaarv")
+plt.xlabel("Linn")
+plt.ylabel("Elanike arv")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
 # x=np.arange(-10,10,1)# -10,-9,-8....10  linspace(-10,10,100)-punktidearv
 # y=2*x**2-4*x+5
 # plt.figure(facecolor='yellow')
@@ -11,79 +51,74 @@
 # plt.savefig('graafik.png')
 # plt.show()
 
-import matplotlib.pyplot as plt
-import numpy as np
-x=np.arange(-9,-1,1)
-y=(-1/8)*((x+9)**2)+8
+#babochka
 
-x1=np.arange(1,9,1)
-y1=(-1/8)*((x-9)**2)+8
+# x=np.arange(-9,-1,1)#y
+# y=-1/8*(x+9)**2+8
 
-x2=np.arange(-9,-8,1)
-y2=7*((x+8)**2)+1
+# x1=np.arange(1,9,1)#b
+# y1=-1/8*(x1-9)**2+8
 
-x3=np.arange(8,9,1)
-y3=7*((x-8)**2)+1
+# x2=np.linspace(-9,-8,15)#y
+# y2=7*((x2+8)**2)+1
 
-x4=np.arange(-8,-1,1)
-y4=(1/49)*(x+1)**2
+# x3=np.linspace(8,9,15)#b
+# y3=7*(x3-8)**2+1
 
-x5=np.arange(1,8,1)
-y5=(1/49)*(x-1)**2
+# x4=np.arange(-8,-1,1)#y
+# y4=1/49*(x4+1)**2
 
-x6=np.arange(-8,-1,1)
-y6=(-4/49)*(x+1)**2
+# x5=np.arange(1,8,1)#b
+# y5=1/49*(x5-1)**2
 
-x7=np.arange(1,8,1)
-y7=(-4/49)*(x-1)**2
+# x6=np.arange(-8,-1,1)#l
+# y6=(-4/49)*(x6+1)**2
 
-x8=np.arange(-8,-2,1)
-y8=(1/3)*((x+5)**2)-7
+# x7=np.arange(1,8,1)#p
+# y7=(-4/49)*(x7-1)**2
 
-x9=np.arange(1,8,1)
-y9=(1/3)*((x-5)**2)-7
+# x8=np.arange(-8,-2,1)#l
+# y8=1/3*(x8+5)**2-7
 
-x10=np.arange(-2,-1,1)
-y10=-2*((x+1)**2)-2
+# x9=np.arange(2,8,1)#p
+# y9=1/3*(x9-5)**2-7
 
-x11=np.arange(1,2,1)
-y11=-2*((x-1)**2)-2
+# x10=np.linspace(-2,-1,10)#l
+# y10=-2*(x10+1)**2-2
 
-x12=np.arange(-1,1,1)
-y12=-4*x**2+2
+# x11=np.linspace(1,2,10)#p
+# y11=-2*(x11-1)**2-2
 
-x13=np.arange(1,-1,1)
-y13=4*x**2-6
+# x12=np.linspace(-1,1,15)
+# y12=-4*x12**2+2
 
-x14=np.arange(-2,0,1)
-y14=-1,5*x+2
+# x13=np.linspace(1,-1,15)
+# y13=4*x13**2-6
 
-x15=np.arange(0,2,1)
-y15=1,5*x+2
+# x14=np.linspace(-2,0,10)
+# y14=(-1.5)*x14+2
 
-plt.plot(x, y, linestyle='-', marker='o', color='red')
-plt.plot(x1, y1, linestyle='-', marker='o', color='blue')
-plt.plot(x2, y2, linestyle='-', marker='o', color='red')
-plt.plot(x3, y3, linestyle='-', marker='o', color='red')
-plt.plot(x4, y4, linestyle='-', marker='o', color='red')
-plt.plot(x5, y5, linestyle='-', marker='o', color='red')
-plt.plot(x6, y6, linestyle='-', marker='o', color='red')
-plt.plot(x7, y7, linestyle='-', marker='o', color='red')
-plt.plot(x8, y8, linestyle='-', marker='o', color='red')
-plt.plot(x9, y9, linestyle='-', marker='o', color='red')
-plt.plot(x10, y10, linestyle='-', marker='o', color='red')
-plt.plot(x11, y11, linestyle='-', marker='o', color='red')
-plt.plot(x12, y13, linestyle='-', marker='o', color='red')
-plt.plot(x14, y14, linestyle='-', marker='o', color='red')
-plt.plot(x15, y15, linestyle='-', marker='o', color='red')
-plt.show()
+# x15=np.linspace(0,2,10)
+# y15=1.5*x15+2
 
-
-
-
-
-
-
+# plt.plot(x, y, linestyle='-', marker='o', color='yellow')
+# plt.plot(x1, y1, linestyle='-', marker='o', color='blue')
+# plt.plot(x2, y2, linestyle='-', marker='o', color='yellow')
+# plt.plot(x3, y3, linestyle='-', marker='o', color='blue')
+# plt.plot(x4, y4, linestyle='-', marker='o', color='yellow')
+# plt.plot(x5, y5, linestyle='-', marker='o', color='blue')
+# plt.plot(x6, y6, linestyle='-', marker='o', color='lightblue')
+# plt.plot(x7, y7, linestyle='-', marker='o', color='pink')
+# plt.plot(x8, y8, linestyle='-', marker='o', color='lightblue')
+# plt.plot(x9, y9, linestyle='-', marker='o', color='pink')
+# plt.plot(x10, y10, linestyle='-', marker='o', color='lightblue')
+# plt.plot(x11, y11, linestyle='-', marker='o', color='pink')
+# plt.plot(x12, y12, linestyle='-', marker='o', color='red')
+# plt.plot(x13, y13, linestyle='-', marker='o', color='red')
+# plt.plot(x14, y14, linestyle='-', marker='o', color='red')
+# plt.plot(x15, y15, linestyle='-', marker='o', color='red')
+# plt.grid()
+# plt.show()
 
 
 # x = [1, 2, 3, 4, 5]
