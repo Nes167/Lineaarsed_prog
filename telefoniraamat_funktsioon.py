@@ -96,3 +96,5 @@ def saada_kiri():
         print('Kiri saadetud')
     except Exception as e:
         print("Viga: ", e)
+
+

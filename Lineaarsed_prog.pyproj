@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>teema8_matplotlib.py</StartupFile>
+    <StartupFile>tel_main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -46,17 +46,22 @@
     <Compile Include="teema7_txt.py" />
     <Compile Include="teema8.2_mäed.py" />
     <Compile Include="teema8_matplotlib.py" />
+    <Compile Include="teeme8.2_Tkinter.py" />
     <Compile Include="telefoniraamat_funktsioon.py" />
     <Compile Include="telefoniraamat_main.py" />
+    <Compile Include="tel_main.py" />
     <Compile Include="Tund1_Funktsioonide_kasutamine.py" />
     <Compile Include="Valiklaused %28Ruutvõrrand%29.py" />
     <Compile Include="vigade_otsing.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cat.ico" />
+    <Content Include="cat_png.png" />
     <Content Include="FELV-cat.jpg" />
     <Content Include="funktsioonid.txt" />
     <Content Include="loetelu.txt" />
     <Content Include="maed.txt" />
+    <Content Include="phonebook.ico" />
     <Content Include="rahvaarv.txt" />
     <Content Include="sonad.txt" />
     <Content Include="telefoniraamat.txt" />
