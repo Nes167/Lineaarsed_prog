@@ -74,19 +74,20 @@ def muuda_kontakt_gui():
        messagebox.showwarning("Puuduvad andmed", "Palun täida kõik väljad.")
 
 
+
 aken = tk.Tk()
 aken.title("Telefoniraamat")
 aken.iconbitmap("phonebook.ico")
 aken.configure(bg="pink")
 otsingu_viide=tk.StringVar() #IntVar() #Muudame StringVar-iks, et saaksime salvestada algse nime
 otsingu_viide.set("")
-tk.Label(aken, text="Nimi: ",font=("Haettenschweiler",12),fg="black",  bg="pink").pack()
+tk.Label(aken, text="Nimi: ",font=("Haettenschweiler",12),fg="red",  bg="pink").pack()
 nimi_entry=tk.Entry(aken)
 nimi_entry.pack()
-tk.Label(aken, text="E-mail: ",font=("Haettenschweiler",12),fg="black", bg="pink").pack()
+tk.Label(aken, text="E-mail: ",font=("Haettenschweiler",12),fg="red", bg="pink").pack()
 email_entry=tk.Entry(aken)
 email_entry.pack()
-tk.Label(aken, text="Telefon: ",font=("Haettenschweiler",12),fg="black", bg="pink").pack()
+tk.Label(aken, text="Telefon: ",font=("Haettenschweiler",12),fg="red", bg="pink").pack()
 telefon_entry=tk.Entry(aken)
 telefon_entry.pack()
 
@@ -99,6 +100,7 @@ tk.Button(nupude_rida, text="Otsi kontakt", command=otsi_kontakt_gui,font=("Haet
 tk.Button(nupude_rida, text="Kustuta kontakt", command=kustuta_kontakt_gui,font=("Haettenschweiler",14),fg="black", bg="pink").pack(side="left")
 tk.Button(nupude_rida, text="Sorteeri kontakt", command=sorteeri_gui,font=("Haettenschweiler",14),fg="black",  bg="pink").pack(side="left")
 tk.Button(nupude_rida, text="Muuda kontakt", command=muuda_kontakt_gui,font=("Haettenschweiler",14),fg="black",  bg="pink").pack(side="left")
+
 
 tekstikast = tk.Text(aken, height=10, width=50)
 tekstikast.pack(pady=10)

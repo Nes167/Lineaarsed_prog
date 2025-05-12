@@ -1,5 +1,7 @@
 import json
 import os
+import smtplib,ssl
+from email.message import EmailMessage
 
 faili_nimi="kontaktid.json"
 
