@@ -93,7 +93,7 @@ telefon_entry.pack()
 nupude_rida=tk.Frame(aken)
 nupude_rida.pack(pady=5)
 
-tk.Button(nupude_rida, text="Kuva kontaktid", command=kuva_kontaktid,font=("Haettenschweiler",14),fg="black", bg="pink").pack(side="left",pady=4)
+tk.Button(nupude_rida, text="Kuva kontaktid", command=kuva_kontaktid,font=("Haettenschweiler",14),fg="black", bg="pink").pack(side="left",pady=0)
 tk.Button(nupude_rida, text="Lisa kontakt", command=lisa_kontakt_gui,font=("Haettenschweiler",14),fg="black",  bg="pink").pack(side="left")
 tk.Button(nupude_rida, text="Otsi kontakt", command=otsi_kontakt_gui,font=("Haettenschweiler",14),fg="black",  bg="pink").pack(side="left")
 tk.Button(nupude_rida, text="Kustuta kontakt", command=kustuta_kontakt_gui,font=("Haettenschweiler",14),fg="black", bg="pink").pack(side="left")
