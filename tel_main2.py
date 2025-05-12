@@ -1,33 +1,48 @@
 import tkinter as tk
-from tkinter import *
-from telefoniraamat_funktsioon import *
+from tkinter import messagebox
+from tel_funktsioon2 import *
 
 
 
-fail = "telefoniraamat.txt"
-telefoniraamat = loefailist(fail)
 
-# def naita_kontakte():
-#     tekstikast.delete(1.0, tk.END)
-#     for k in telefoniraamat:
-#         tekstikast.insert(tk.END, f"{k['nimi']}, {k['email']}, {k['telefon']}\n")
+kontaktid = loe_failist()
 
-# def lisa_kontakt_gui():
-#     nimi = simpledialog.askstring("Lisa", "Sisesta nimi:").capitalize()
-#     email = simpledialog.askstring("Lisa", "Sisesta e-mail:")
-#     telefon = simpledialog.askstring("Lisa", "Sisesta telefon:")
-#     if nimi and email and telefon:
-#         telefoniraamat.append({'nimi': nimi, 'email': email, 'telefon': telefon})
-#         naita_kontakte()
+def kuva_kontaktid():
+    tekstikast.delete("1.0", "end")
+    for kontakt in kontaktid:
+        tekstikast.insert("end", f"{kontakt['nimi']}| {kontakt['telefon']} | {kontakt['email']}\n")
 
-# def otsi_kontakt_gui():
-#     nimi = simpledialog.askstring("Otsi", "Sisesta nimi:")
-#     if nimi:
-#         for k in telefoniraamat:
-#             if nimi.lower() in k['nimi'].lower():
-#                 messagebox.showinfo("Leitud", f"{k['nimi']}, {k['email']}, {k['telefon']}")
-#                 return
-#         messagebox.showwarning("Ei leitud", "Kontakt puudub.")
+def lisa_kontakt_gui():
+    nimi = nimi_entry.get()
+    telefon = telefon_entry.get()
+    email = email_entry.get()
+    if nimi and telefon and email:
+        lisa_kontakt(kontaktid, nimi,telefon,email)
+        salvesta_kontaktid(kontaktid)
+        messagebox.showinfo("Edu","kontakt lisatud.")
+        nimi_entry.delete(0,'end')
+        telefon_entry.delete(0,'end')
+        email_entry.delete(0,'end')
+        kuva_kontaktid()
+    else:
+        messagebox.showwarning("Tühjad väljad","Täida kõik väljad")
+
+def otsi_kontakt_gui():
+    nimi = nimi_entry.get
+    tulemused=otsi_kontakt(kontaktid, nimi)
+    if tulemused:
+        kontakt=tulemused[0]
+        otsingu_viide.set(kontakt["nimi"])
+        nimi_entry.delete(0,'end')
+        nimi_entry.insert(0, kontakt["nimi"])
+        telefon_entry.delete(0,'end')
+        telefon_entry.insert(0, kontakt["telefon"])
+        email_entry.delete(0,'end')
+        email_entry.insert(0, kontakt["email"])
+        tekstikast.delete("1.0",'end')
+        tekstikast.insert("end", "Leitud: {kontakt['nimi']} | {kontakt['telefon']} | {kontakt['email']}\n")
+    else:
+        messagebox.showwarning("Ei leitud", "Kontakt puudub.")
 
 # def kustuta_kontakt_gui():
 #     nimi = simpledialog.askstring("Kustuta", "Sisesta nimi:")
@@ -87,6 +102,8 @@ aken = tk.Tk()
 aken.title("Telefoniraamat")
 aken.iconbitmap("phonebook.ico")
 aken.configure(bg="lightblue")
+otsingu_viide=tk.StringVar() #IntVar() #Muudame StringVar-iks, et saaksime salvestada algse nime
+otsingu_viide.set("")
 tk.Label(aken, text="Nimi: ",font=("Rockwell",10),fg="black").pack()
 nimi_entry=tk.Entry(aken)
 nimi_entry.pack()
@@ -103,13 +120,13 @@ nupude_rida.pack(pady=5)
 
 
 tk.Button(nupude_rida, text="Kuva kontaktid", command=kuva_kontaktid,font=("Rockwell",12),fg="black").pack(side="left",pady=2)
-tk.Button(nupude_rida, text="Lisa kontakt", command=lisa_kontakt,font=("Rockwell",12),fg="black").pack(side="left")
-tk.Button(nupude_rida, text="Otsi kontakt", command=otsi_kontakt,font=("Rockwell",12),fg="black").pack(side="left")
-tk.Button(nupude_rida, text="Muuda kontakt", command=paranda_kontakt,font=("Rockwell",12),fg="black").pack(side="left")
-tk.Button(nupude_rida, text="Kustuta kontakt", command=kustuta_kontakt,font=("Rockwell",12),fg="black").pack(side="left")
-tk.Button(nupude_rida, text="Sorteeri_kontakt", command=sorteeri_kontakt,font=("Rockwell",12),fg="black").pack(side="left")
-tk.Button(nupude_rida, text="Saada e-kiri", command=saada_kiri,font=("Rockwell",12),fg="black").pack(side="left")
-tk.Button(nupude_rida, text="Salvesta", command=Kirjutafailisse,font=("Rockwell",12),fg="black").pack(side="left")
+tk.Button(nupude_rida, text="Lisa kontakt", command=lisa_kontakt_gui,font=("Rockwell",12),fg="black").pack(side="left")
+tk.Button(nupude_rida, text="Otsi kontakt", command=otsi_kontakt_gui,font=("Rockwell",12),fg="black").pack(side="left")
+# tk.Button(nupude_rida, text="Muuda kontakt", command=muuda_kontakt_gui,font=("Rockwell",12),fg="black").pack(side="left")
+# tk.Button(nupude_rida, text="Kustuta kontakt", command=kustuta_kontakt_gui,font=("Rockwell",12),fg="black").pack(side="left")
+# tk.Button(nupude_rida, text="Sorteeri_kontakt", command=sorteeri_kontakt,font=("Rockwell",12),fg="black").pack(side="left")
+# tk.Button(nupude_rida, text="Saada e-kiri", command=saada_email_gui,font=("Rockwell",12),fg="black").pack(side="left")
+# tk.Button(nupude_rida, text="Salvesta", command=Kirjutafailisse,font=("Rockwell",12),fg="black").pack(side="left")
 
 
 tekstikast = tk.Text(aken, height=10, width=50)

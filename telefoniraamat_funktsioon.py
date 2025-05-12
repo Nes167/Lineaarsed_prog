@@ -1,6 +1,9 @@
 import smtplib,ssl
 from email.message import EmailMessage
 
+
+telefoniraamat="telefoniraamat.txt"
+
 def loefailist(fail:str):
     telefoniraamat=[]
     with open(fail,'r',encoding="utf-8-sig") as f:
@@ -8,6 +11,7 @@ def loefailist(fail:str):
             nimi,email,telefon=rida.strip().split(",")
             telefoniraamat.append({'nimi':nimi,'email':email,'telefon':telefon})
     return telefoniraamat
+
 
 def Kirjutafailisse(fail:str,järjend:list):
     with open(fail,'w',encoding="utf-8-sig") as f:

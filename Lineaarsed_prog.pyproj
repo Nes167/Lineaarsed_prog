@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>tel_main.py</StartupFile>
+    <StartupFile>tel_main2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -49,7 +49,8 @@
     <Compile Include="teeme8.2_Tkinter.py" />
     <Compile Include="telefoniraamat_funktsioon.py" />
     <Compile Include="telefoniraamat_main.py" />
-    <Compile Include="tel_main.py" />
+    <Compile Include="tel_funktsioon2.py" />
+    <Compile Include="tel_main2.py" />
     <Compile Include="Tund1_Funktsioonide_kasutamine.py" />
     <Compile Include="Valiklaused %28Ruutvõrrand%29.py" />
     <Compile Include="vigade_otsing.py" />
@@ -59,6 +60,7 @@
     <Content Include="cat_png.png" />
     <Content Include="FELV-cat.jpg" />
     <Content Include="funktsioonid.txt" />
+    <Content Include="kontaktid.json" />
     <Content Include="loetelu.txt" />
     <Content Include="maed.txt" />
     <Content Include="phonebook.ico" />
