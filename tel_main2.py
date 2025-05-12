@@ -44,16 +44,21 @@ def otsi_kontakt_gui():
     else:
         messagebox.showwarning("Ei leitud", "Kontakt puudub.")
 
-# def kustuta_kontakt_gui():
-#     nimi = simpledialog.askstring("Kustuta", "Sisesta nimi:")
-#     if nimi:
-#         for k in telefoniraamat:
-#             if nimi.lower() in k['nimi'].lower():
-#                 telefoniraamat.remove(k)
-#                 naita_kontakte()
-#                 messagebox.showinfo("Eemaldatud", "Kontakt kustutatud.")
-#                 return
-#         messagebox.showwarning("Ei leitud", "Kontakt puudub.")
+def kustuta_kontakt_gui():
+    nimi = nimi_entry.get()
+    if kustuta_kontakt(kontaktid, nimi):
+        salvesta_kontaktid(kontaktid)
+        messagebox.showinfo("Kustutatud", f"'{nimi}' kustutati.")
+        kuva_kontaktid()
+    else:
+        messagebox.showwarning("Ei leitud", "Kontakt puudub.")
+
+def sorteeri_gui():
+    kontaktid_sorted=sorteeri_kontaktid(kontaktid, "nimi")
+    tekstikast.delete("1.0","end")
+    for kontakt in kontaktid_sorted:
+        tekstikast.insert("end", f"{kontakt['nimi']}| {kontakt['telefon']} | {kontakt['email']}\n")
+
 
 # def muuda_kontakt_gui():
 #     nimi = simpledialog.askstring("Muuda", "Sisesta nimi, keda muuta:")
@@ -71,37 +76,13 @@ def otsi_kontakt_gui():
 #                 return
 #     messagebox.showwarning("Ei leitud", "Kontakt puudub.")
 
-# def saada_email_gui():
-#     kellele = simpledialog.askstring("Saada kiri", "Sisesta saaja e-mail:")
-#     parool = simpledialog.askstring("Parool", "Sisesta rakenduse parool:", show='*')
-#     if kellele and parool:
-#         try:
-#             smtp_server = "smtp.gmail.com"
-#             smtp_port = 587
-#             kellelt = "anastassiamayba@gmail.com"
-#             msg = EmailMessage()
-#             msg['Subject'] = "Tere!!!"
-#             msg['From'] = kellelt
-#             msg['To'] = kellele
-#             msg.set_content("Tere!")
-#             context = ssl.create_default_context()
-#             server = smtplib.SMTP(smtp_server, smtp_port)
-#             server.starttls(context=context)
-#             server.login(kellelt, parool)
-#             server.send_message(msg)
-#             messagebox.showinfo("Edu", "Kiri saadetud!")
-#         except Exception as e:
-#             messagebox.showerror("Viga", str(e))
 
-# def salvesta_ja_valja():
-#     Kirjutafailisse(fail, telefoniraamat)
-#     root.destroy()
 
 
 aken = tk.Tk()
 aken.title("Telefoniraamat")
 aken.iconbitmap("phonebook.ico")
-aken.configure(bg="lightblue")
+aken.configure(bg="pink")
 otsingu_viide=tk.StringVar() #IntVar() #Muudame StringVar-iks, et saaksime salvestada algse nime
 otsingu_viide.set("")
 tk.Label(aken, text="Nimi: ",font=("Rockwell",10),fg="black").pack()
@@ -122,11 +103,11 @@ nupude_rida.pack(pady=5)
 tk.Button(nupude_rida, text="Kuva kontaktid", command=kuva_kontaktid,font=("Rockwell",12),fg="black").pack(side="left",pady=2)
 tk.Button(nupude_rida, text="Lisa kontakt", command=lisa_kontakt_gui,font=("Rockwell",12),fg="black").pack(side="left")
 tk.Button(nupude_rida, text="Otsi kontakt", command=otsi_kontakt_gui,font=("Rockwell",12),fg="black").pack(side="left")
+tk.Button(nupude_rida, text="Kustuta kontakt", command=kustuta_kontakt_gui,font=("Rockwell",12),fg="black").pack(side="left")
+tk.Button(nupude_rida, text="Sorteeri kontakt", command=sorteeri_gui,font=("Rockwell",12),fg="black").pack(side="left")
 # tk.Button(nupude_rida, text="Muuda kontakt", command=muuda_kontakt_gui,font=("Rockwell",12),fg="black").pack(side="left")
-# tk.Button(nupude_rida, text="Kustuta kontakt", command=kustuta_kontakt_gui,font=("Rockwell",12),fg="black").pack(side="left")
-# tk.Button(nupude_rida, text="Sorteeri_kontakt", command=sorteeri_kontakt,font=("Rockwell",12),fg="black").pack(side="left")
-# tk.Button(nupude_rida, text="Saada e-kiri", command=saada_email_gui,font=("Rockwell",12),fg="black").pack(side="left")
-# tk.Button(nupude_rida, text="Salvesta", command=Kirjutafailisse,font=("Rockwell",12),fg="black").pack(side="left")
+
+
 
 
 tekstikast = tk.Text(aken, height=10, width=50)

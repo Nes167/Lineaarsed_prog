@@ -14,8 +14,20 @@ def salvesta_kontaktid(kontaktid):
         json.dump(kontaktid, f, ensure_ascii=False, indent=4)
 
 def lisa_kontakt(kontaktid, nimi, telefon,email):
-    kontaktid.append({'nimi':nimi, "telefon": telefon,"email":email})
+    kontaktid.append({"nimi":nimi, "telefon": telefon,"email":email})
 
 def otsi_kontakt(kontaktid , nimi):
-    return [k for k in kontaktid if nimi.lower() in k['nimi'].lower()]
+    return [k for k in kontaktid if nimi.lower() in k["nimi"].lower()]
 
+def kustuta_kontakt(kontaktid, nimi):
+    leitud= [k for k in kontaktid if k["nimi"].lower() == nimi.lower()]
+    if leitud:
+        kontaktid.remove(leitud[0])
+        return True
+    return False
+
+# def muuda_kontakt(kontaktid, vana_nimi, uus_nimi, uus_telefon, uus_email):
+
+
+def sorteeri_kontaktid(kontaktid, vaike):
+    return sorted(kontaktid, key=lambda x: x[vaike].lower())
