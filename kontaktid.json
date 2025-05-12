@@ -1,13 +1,22 @@
-[
-  {
-    "nimi": "Anastassia",
-    "telefon": "58692569",
-    "email": "anastassia@gmail.com"
-
-  },
-  {
-    "nimi": "Kirill",
-    "telefon": "58645862",
-    "email": "kirill@gmail.com"
-  }
+﻿[
+    {
+        "nimi": "Anastassia",
+        "telefon": "58692569",
+        "email": "anastassia@gmail.com"
+    },
+    {
+        "nimi": "Kirill",
+        "telefon": "58645862",
+        "email": "kirill@gmail.com"
+    },
+    {
+        "nimi": "Oleg",
+        "telefon": "57854895",
+        "email": "oleg@gmail.com"
+    },
+    {
+        "nimi": "Olga",
+        "telefon": "54785125",
+        "email": "olga@gmail.com"
+    }
 ]

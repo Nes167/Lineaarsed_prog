@@ -10,7 +10,7 @@ def loe_failist():
         return json.load(f)
 
 def salvesta_kontaktid(kontaktid):
-    with open(faili_nimi,'r',encoding="utf-8-sig") as f:
+    with open(faili_nimi,'w',encoding="utf-8-sig") as f:
         json.dump(kontaktid, f, ensure_ascii=False, indent=4)
 
 def lisa_kontakt(kontaktid, nimi, telefon,email):
@@ -26,7 +26,14 @@ def kustuta_kontakt(kontaktid, nimi):
         return True
     return False
 
-# def muuda_kontakt(kontaktid, vana_nimi, uus_nimi, uus_telefon, uus_email):
+def muuda_kontakt(kontaktid, vana_nimi, uus_nimi, uus_telefon, uus_email):
+    for k in kontaktid:
+        if k["nimi"].lower()==vana_nimi.lower():
+            k["nimi"]=uus_nimi
+            k["telefon"]=uus_telefon
+            k["email"]=uus_email
+            return True
+    return False
 
 
 def sorteeri_kontaktid(kontaktid, vaike):
