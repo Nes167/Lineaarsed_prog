@@ -56,6 +56,12 @@ def sorteeri_gui():
     for kontakt in kontaktid_sorted:
         tekstikast.insert("end", f"{kontakt['nimi']}| {kontakt['telefon']} | {kontakt['email']}\n")
 
+def sorteeri_tagurpidi_gui():
+    kontaktid_sorted = sorteeri_tagurpidi(kontaktid, "nimi")
+    tekstikast.delete("1.0", "end")
+    for kontakt in kontaktid_sorted:
+        tekstikast.insert("end", f"{kontakt['nimi']} | {kontakt['telefon']} | {kontakt['email']}\n")
+
 
 def muuda_kontakt_gui():
     vana_nimi = otsingu_viide.get()
@@ -72,6 +78,32 @@ def muuda_kontakt_gui():
             messagebox.showwarning("Tõrge", "Kontakti ei leitud muudatuseks.")
     else:
        messagebox.showwarning("Puuduvad andmed", "Palun täida kõik väljad.")
+
+def kuva_kontaktide_arv():
+    arv = kontaktide_arv(kontaktid)
+    messagebox.showinfo("Kontaktide arv", f"Kontaktide koguarv: {arv}")
+
+def puhasta_valjad():
+    nimi_entry.delete(0, 'end')
+    telefon_entry.delete(0, 'end')
+    email_entry.delete(0, 'end')
+    tekstikast.delete("1.0", "end")
+    otsingu_viide.set("")
+
+def kuva_emailid():
+    tekstikast.delete("1.0", "end")
+    for kontakt in kontaktid:
+        tekstikast.insert("end", f"{kontakt['email']}\n")
+
+def otsi_email_gui():
+    email = email_entry.get()
+    tulemused = otsi_emaili_jargi(kontaktid, email)
+    tekstikast.delete("1.0", "end")
+    if tulemused:
+        for kontakt in tulemused:
+            tekstikast.insert("end", f"{kontakt['nimi']} | {kontakt['telefon']} | {kontakt['email']}\n")
+    else:
+        messagebox.showwarning("Ei leitud", "E-maili järgi kontakti ei leitud.")
 
 
 
@@ -99,8 +131,12 @@ tk.Button(nupude_rida, text="Lisa kontakt", command=lisa_kontakt_gui,font=("Haet
 tk.Button(nupude_rida, text="Otsi kontakt", command=otsi_kontakt_gui,font=("Haettenschweiler",14),fg="black",  bg="pink").pack(side="left")
 tk.Button(nupude_rida, text="Kustuta kontakt", command=kustuta_kontakt_gui,font=("Haettenschweiler",14),fg="black", bg="pink").pack(side="left")
 tk.Button(nupude_rida, text="Sorteeri kontakt", command=sorteeri_gui,font=("Haettenschweiler",14),fg="black",  bg="pink").pack(side="left")
+tk.Button(nupude_rida, text="Sorteeri Z–A", command=sorteeri_tagurpidi_gui,font=("Haettenschweiler",14),fg="black",  bg="pink").pack(side="left")
 tk.Button(nupude_rida, text="Muuda kontakt", command=muuda_kontakt_gui,font=("Haettenschweiler",14),fg="black",  bg="pink").pack(side="left")
-
+tk.Button(nupude_rida, text="Kontaktide arv", command=kuva_kontaktide_arv,font=("Haettenschweiler",14),fg="black",  bg="pink").pack(side="left")
+tk.Button(nupude_rida, text="Tühjenda väljad", command=puhasta_valjad,font=("Haettenschweiler",14),fg="black",  bg="pink").pack(side="left")
+tk.Button(nupude_rida, text="Näita e-mailid", command=kuva_emailid,font=("Haettenschweiler",14),fg="black",  bg="pink").pack(side="left")
+tk.Button(nupude_rida, text="Otsi e-maili", command=otsi_email_gui,font=("Haettenschweiler",14),fg="black",  bg="pink").pack(side="left")
 
 tekstikast = tk.Text(aken, height=10, width=50)
 tekstikast.pack(pady=10)

@@ -40,3 +40,12 @@ def muuda_kontakt(kontaktid, vana_nimi, uus_nimi, uus_telefon, uus_email):
 
 def sorteeri_kontaktid(kontaktid, vaike):
     return sorted(kontaktid, key=lambda x: x[vaike].lower())
+
+def sorteeri_tagurpidi(kontaktid, vaike):
+    return sorted(kontaktid, key=lambda x: x[vaike].lower(), reverse=True)
+
+def kontaktide_arv(kontaktid):
+    return len(kontaktid)
+
+def otsi_emaili_jargi(kontaktid, email):
+    return [k for k in kontaktid if email.lower() in k["email"].lower()]
