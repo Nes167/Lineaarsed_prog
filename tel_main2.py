@@ -125,7 +125,7 @@ def saada_kiri_aken():
 
     nupude_rida3=tk.Frame(kiri_aken)
     nupude_rida3.pack(pady=5)
-    tk.Button(nupude_rida3, text="Saada", command=saada(kellele_entry,kellelt_entry,teema_entry, parool_entry,tekstikast1,kiri_aken),font=("Haettenschweiler",14),fg="black", bg="pink").pack(side="right",pady=0)
+    tk.Button(nupude_rida3, text="Saada", command=lambda: saada(kellele_entry,kellelt_entry,teema_entry, parool_entry,tekstikast1,kiri_aken),font=("Haettenschweiler",14),fg="black", bg="pink").pack(side="right",pady=0)
     
 def saada(kellele_entry,kellelt_entry,teema_entry, parool_entry,tekstikast1,kiri_aken):
     kellele = kellele_entry.get()

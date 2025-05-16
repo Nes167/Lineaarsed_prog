@@ -64,5 +64,7 @@ def saada_kiri(kellele, kellelt, teema, parool, kiri):
         server.starttls(context=context)
         server.login(kellelt,parool)
         server.send_message(msg)
+        return True
     except Exception as e:
         print("Viga: ", e)
+        return False
