@@ -49,3 +49,20 @@ def kontaktide_arv(kontaktid):
 
 def otsi_emaili_jargi(kontaktid, email):
     return [k for k in kontaktid if email.lower() in k["email"].lower()]
+
+def saada_kiri(kellele, kellelt, teema, parool, kiri):
+    smtp_server="smtp.gmail.com"
+    smtp_port=587
+    context=ssl.create_default_context()
+    msg=EmailMessage()
+    msg['Subject']= teema
+    msg['From']=kellelt
+    msg['To']=kellele
+    msg.set_content(kiri)
+    try:
+        server=smtplib.SMTP(smtp_server,smtp_port)
+        server.starttls(context=context)
+        server.login(kellelt,parool)
+        server.send_message(msg)
+    except Exception as e:
+        print("Viga: ", e)
