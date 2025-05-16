@@ -63,6 +63,7 @@
     <Content Include="kontaktid.json" />
     <Content Include="loetelu.txt" />
     <Content Include="maed.txt" />
+    <Content Include="mail.ico" />
     <Content Include="phonebook.ico" />
     <Content Include="rahvaarv.txt" />
     <Content Include="sonad.txt" />

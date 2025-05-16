@@ -107,6 +107,8 @@ def otsi_email_gui():
 def saada_kiri_aken():
     kiri_aken=tk.Tk()
     kiri_aken.title("Saada kiri")
+    kiri_aken.iconbitmap("mail.ico")
+    kiri_aken.configure(bg="pink")
     tk.Label(kiri_aken, text="Kellele: ",font=("Haettenschweiler",12),fg="red",  bg="pink").pack()
     kellele_entry=tk.Entry(kiri_aken)
     kellele_entry.pack()
@@ -126,6 +128,7 @@ def saada_kiri_aken():
     nupude_rida3=tk.Frame(kiri_aken)
     nupude_rida3.pack(pady=5)
     tk.Button(nupude_rida3, text="Saada", command=lambda: saada(kellele_entry,kellelt_entry,teema_entry, parool_entry,tekstikast1,kiri_aken),font=("Haettenschweiler",14),fg="black", bg="pink").pack(side="right",pady=0)
+    kiri_aken.mainloop()
     
 def saada(kellele_entry,kellelt_entry,teema_entry, parool_entry,tekstikast1,kiri_aken):
     kellele = kellele_entry.get()
