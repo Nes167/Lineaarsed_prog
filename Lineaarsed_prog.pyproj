@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>esimene_osa_pygame.py</StartupFile>
+    <StartupFile>pygame1.2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -31,6 +31,9 @@
     <Compile Include="main.py" />
     <Compile Include="module_palgad.py" />
     <Compile Include="palgad.py" />
+    <Compile Include="pygame1.1.py" />
+    <Compile Include="pygame1.2.py" />
+    <Compile Include="pygame1.3.py" />
     <Compile Include="sonastik2.py" />
     <Compile Include="sonastik.py" />
     <Compile Include="sõnastik.py" />
@@ -57,7 +60,9 @@
     <Compile Include="vigade_otsing.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bee.png" />
     <Content Include="cat.ico" />
+    <Content Include="cat.png" />
     <Content Include="catt.png" />
     <Content Include="cat_png.png" />
     <Content Include="FELV-cat.jpg" />
@@ -69,7 +74,10 @@
     <Content Include="phonebook.ico" />
     <Content Include="rahvaarv.txt" />
     <Content Include="sonad.txt" />
+    <Content Include="speech.png" />
+    <Content Include="taust.jpg" />
     <Content Include="telefoniraamat.txt" />
+    <Content Include="tomcat.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
