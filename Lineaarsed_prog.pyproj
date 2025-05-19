@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>tel_main2.py</StartupFile>
+    <StartupFile>esimene_osa_pygame.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,6 +26,7 @@
     <Compile Include="D_vitamin_module.py" />
     <Compile Include="e-kiri_main.py" />
     <Compile Include="Ekirja_saatmine_ja_saamine.py" />
+    <Compile Include="esimene_osa_pygame.py" />
     <Compile Include="main2.py" />
     <Compile Include="main.py" />
     <Compile Include="module_palgad.py" />
@@ -57,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cat.ico" />
+    <Content Include="catt.png" />
     <Content Include="cat_png.png" />
     <Content Include="FELV-cat.jpg" />
     <Content Include="funktsioonid.txt" />
