@@ -22,7 +22,6 @@ teksti_lisamine=font.render(sõnum, True, must)
 ekraan.blit(teksti_lisamine,(415,142))
 
 
-
 pygame.display.flip()
 
 while True:

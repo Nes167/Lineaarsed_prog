@@ -17,7 +17,6 @@ pygame.draw.circle(ekraan, must, (158, 95), 3)
 pygame.draw.rect(ekraan, punane, (130, 70, 40, 10))  
 pygame.draw.rect(ekraan, punane, (135, 50, 30, 20))  
 
-
 pygame.display.flip()
 
 while True:
