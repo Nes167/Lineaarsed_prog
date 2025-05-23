@@ -22,3 +22,9 @@ def drawHouse(x, y, width, height, screen, color):
 drawHouse(100,400,300,400,pind,red)
 
 pygame.display.flip()
+
+while True:
+    event = pygame.event.poll()
+    if event.type == pygame.QUIT:
+        break
+pygame.quit()
