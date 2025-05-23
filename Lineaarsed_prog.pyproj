@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>pygame1.2.py</StartupFile>
+    <StartupFile>ulesanne2.3.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -56,6 +56,9 @@
     <Compile Include="tel_funktsioon2.py" />
     <Compile Include="tel_main2.py" />
     <Compile Include="Tund1_Funktsioonide_kasutamine.py" />
+    <Compile Include="ulesanne2.2.py" />
+    <Compile Include="ulesanne2.3.py" />
+    <Compile Include="ulesanne2.1.py" />
     <Compile Include="Valiklaused %28Ruutvõrrand%29.py" />
     <Compile Include="vigade_otsing.py" />
   </ItemGroup>
@@ -78,6 +81,7 @@
     <Content Include="taust.jpg" />
     <Content Include="telefoniraamat.txt" />
     <Content Include="tomcat.png" />
+    <Content Include="win.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
