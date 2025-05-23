@@ -4,15 +4,16 @@ import pygame
 pygame.init()
 red = [255, 0, 0]
 lGreen = [153, 255, 153]
+valge = [255 , 255, 255]
 ekraan_w=640
 ekraan_h=480
 
 pind=pygame.display.set_mode([ekraan_w,ekraan_h])
 pygame.display.set_caption("Ruuduvõrk")
-pind.fill(lGreen)
+pind.fill(valge)
 
 def ruudustik(pind,ruudu_w,ruudu_h, read, veerud, varv):
-    varv=red
+    varv=lGreen
     for rida in range(read):
         for veerg in range(veerud):
             x=veerg*ruudu_w

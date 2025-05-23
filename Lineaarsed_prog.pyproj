@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>kletochka.py</StartupFile>
+    <StartupFile>kletochka3.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -28,6 +28,8 @@
     <Compile Include="Ekirja_saatmine_ja_saamine.py" />
     <Compile Include="esimene_osa_pygame.py" />
     <Compile Include="kletochka.py" />
+    <Compile Include="kletochka2.py" />
+    <Compile Include="kletochka3.py" />
     <Compile Include="main2.py" />
     <Compile Include="main.py" />
     <Compile Include="module_palgad.py" />
