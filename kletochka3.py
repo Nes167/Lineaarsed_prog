@@ -7,23 +7,22 @@ ekraan_w=random.randint(400,800)
 ekraan_h=random.randint(400,800)
 
 pind=pygame.display.set_mode([ekraan_w,ekraan_h])
-pygame.display.set_caption("Harjutamine")
+pygame.display.set_caption("Ruuduvõrk")
 pind.fill(valge)
 
-def joonista_ruudustik(pind,ruudu_w,ruudu_h, read, veerud):
+def ruudustik(pind,ruudu_w,ruudu_h, read, veerud):
     for rida in range(read):
         for veerg in range(veerud):
             varv=[random.randint(0,255),random.randint(0,255),random.randint(0,255)]
             x=veerg*ruudu_w
             y=rida*ruudu_h
             pygame.draw.rect(pind, varv, (x, y, ruudu_w, ruudu_h))
-            pygame.draw.rect(pind,varv,(x,y,ruudu_w, ruudu_k), 1)
-ruudu_k=random.randint(10,50)
-ruudu_l=random.randint(10,50)
-read=ekraan_w//ruudu_l+1
-veerud=ekraan_h//ruudu_k+1
+ruudu_w=random.randint(10,50)
+ruudu_h=random.randint(10,50)
+read=ekraan_w//ruudu_w+1
+veerud=ekraan_h//ruudu_h+1
 
-joonista_ruudustik(pind,ruudu_k,ruudu_l,read,veerud)
+ruudustik(pind,ruudu_h,ruudu_w,read,veerud)
 
 pygame.display.flip()
 
