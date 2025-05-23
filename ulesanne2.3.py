@@ -58,7 +58,7 @@ drawWindow(x, y, maja_w, maja_h, pind, pink)
 drawChimney(x, y, maja_w, maja_h, pind, red)
 
 pygame.display.flip()
-
+#
 while True:
     event = pygame.event.poll()
     if event.type == pygame.QUIT:
