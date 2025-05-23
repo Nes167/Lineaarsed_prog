@@ -19,7 +19,19 @@ def drawHouse(x, y, width, height, screen, color):
     lineThickness = 3
     pygame.draw.lines(screen, color, False, points, lineThickness)
 
+def drawDoor(x, y, width, height, screen, color):
+    door_width=width/4
+    door_height=height/2
+    door_x= x+(width-door_width)/2
+    door_y= y-door_height
+    points = [(door_x,y), (door_x,door_y), (door_x+door_width,door_y), (door_x+door_width, y),(door_x,y)]
+    lineThickness = 3
+    pygame.draw.lines(screen, color, False, points, lineThickness)
+
 drawHouse(100,400,300,400,pind,red)
+drawDoor(100, 400, 300, 400, pind, blue)
+# drawWindow(100, 400, 300, 400, pind, pink)
+# drawChimney(100, 400, 300, 400, pind, red)
 
 pygame.display.flip()
 
