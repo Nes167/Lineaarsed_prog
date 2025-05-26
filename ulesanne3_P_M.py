@@ -1,6 +1,7 @@
 import pygame, sys, random
 pygame.init()
 
+# collect_m=pygame.mixer.Sound('collect.mp3')
 
 lBlue = [153, 204, 255]
 white = [255, 255, 255]
@@ -87,6 +88,7 @@ while running:
         if dist < 30 + lill['raadius']:
             lilled.remove(lill)
             score += 1
+            # pygame.mixer.Sound.play(collect_m)
         else:
             lill['varv'] = red
 
