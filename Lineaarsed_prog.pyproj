@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ulesanne2.3.py</StartupFile>
+    <StartupFile>ulesanne3_P_M.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -33,10 +33,13 @@
     <Compile Include="main2.py" />
     <Compile Include="main.py" />
     <Compile Include="module_palgad.py" />
+    <Compile Include="osa3_2.py" />
+    <Compile Include="osa3_3.py" />
     <Compile Include="palgad.py" />
     <Compile Include="pygame1.1.py" />
     <Compile Include="pygame1.2.py" />
     <Compile Include="pygame1.3.py" />
+    <Compile Include="pygame3_objektide_animeerimine.py" />
     <Compile Include="sonastik2.py" />
     <Compile Include="sonastik.py" />
     <Compile Include="sõnastik.py" />
@@ -62,6 +65,7 @@
     <Compile Include="ulesanne2.2.py" />
     <Compile Include="ulesanne2.3.py" />
     <Compile Include="ulesanne2.1.py" />
+    <Compile Include="ulesanne3_P_M.py" />
     <Compile Include="Valiklaused %28Ruutvõrrand%29.py" />
     <Compile Include="vigade_otsing.py" />
   </ItemGroup>
