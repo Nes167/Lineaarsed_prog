@@ -6,6 +6,8 @@ lBlue = [153, 204, 255]
 white = [255, 255, 255]
 red = [255, 0, 0]
 green = [0, 255, 0]
+
+
 width = 800
 height = 600
 screen = pygame.display.set_mode([width, height])
@@ -20,19 +22,19 @@ bee_rect = bee_pic.get_rect()
 nurgad = [(0, 0),(width - bee_rect.width, 0),(0, height - bee_rect.height),(width - bee_rect.width, height - bee_rect.height)]
 bee_rect.topleft = random.choice(nurgad)
 
+
+
 lilled = []
 for _ in range(5):
     x = random.randint(50, width - 50)
     y = random.randint(50, height - 50)
-    lilled.append({'pos': (x, y), 'raadius': 60, 'varv': red})
+    lilled.append({'pos': (x, y), 'raadius': 30, 'varv': red})
 
-lillCounter = 0
-totallilled = 20
-score = 0
-
-
-bee_speed_x = random.choice([-3,3])
-bee_speed_y = random.choice([-3,3])
+while True:
+    bee_speed_x = random.choice([-3, 3])
+    bee_speed_y = random.choice([-3, 3])
+    if bee_speed_x != 0 and bee_speed_y != 0:
+        break
 
 def vastupäeva_liikumine():
     bee_rect.x -= bee_speed_x
@@ -49,41 +51,44 @@ def diagonaalne_liikumine():
 # liikumine = random.choice([vastupäeva_liikumine, päripäeva_liikumine, diagonaalne_liikumine])
 liikumine = diagonaalne_liikumine
 
+
 def joonista_mesilane():
     screen.blit(bee_pic, bee_rect)
+
 
 def joonista_lilled():
     for lill in lilled:
         pygame.draw.circle(screen, lill['varv'], lill['pos'], lill['raadius'])
 
-for lill in lilled[:]:
-    if bee_pic.colliderect(lill):
-        lilled.remove(lill)
-        score += 1
-
 clock = pygame.time.Clock()
+score = 0
 running = True
 
 while running:
     screen.fill(white)
+
     for i in pygame.event.get():
         if i.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
 
+    
     liikumine()
 
     if bee_rect.left <= 0 or bee_rect.right >= width:
         bee_speed_x *= -1
     if bee_rect.top <= 0 or bee_rect.bottom >= height:
         bee_speed_y *= -1
-    
-    for lill in lilled:
+
+    for lill in lilled[:]:
         dx = bee_rect.centerx - lill['pos'][0]
         dy = bee_rect.centery - lill['pos'][1]
         dist = (dx ** 2 + dy ** 2) ** 0.5
-        if dist < 40 + lill['raadius']:
-            lill['varv'] = green
+        if dist < 30 + lill['raadius']:
+            lilled.remove(lill)
+            score += 1
+        else:
+            lill['varv'] = red
 
     joonista_lilled()
     joonista_mesilane()
@@ -91,7 +96,9 @@ while running:
     pygame.display.flip()
     clock.tick(60)
 
+
     print(score)
     if score == 20:
         gameover = True
+
 pygame.quit()

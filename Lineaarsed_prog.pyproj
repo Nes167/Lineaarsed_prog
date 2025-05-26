@@ -76,6 +76,7 @@
     <Content Include="cat.png" />
     <Content Include="catt.png" />
     <Content Include="cat_png.png" />
+    <Content Include="collect.mp3" />
     <Content Include="FELV-cat.jpg" />
     <Content Include="funktsioonid.txt" />
     <Content Include="kontaktid.json" />
