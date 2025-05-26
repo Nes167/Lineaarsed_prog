@@ -40,6 +40,7 @@
     <Compile Include="pygame1.2.py" />
     <Compile Include="pygame1.3.py" />
     <Compile Include="pygame3_objektide_animeerimine.py" />
+    <Compile Include="pygame_kokkupõrke.py" />
     <Compile Include="sonastik2.py" />
     <Compile Include="sonastik.py" />
     <Compile Include="sõnastik.py" />
