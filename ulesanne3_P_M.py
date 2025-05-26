@@ -1,5 +1,6 @@
 import pygame, sys, random
 pygame.init()
+# pygame.mixer.init()
 
 # collect_m=pygame.mixer.Sound('collect.mp3')
 
@@ -7,6 +8,7 @@ lBlue = [153, 204, 255]
 white = [255, 255, 255]
 red = [255, 0, 0]
 green = [0, 255, 0]
+grey=[100,100,100]
 
 
 width = 800
@@ -31,6 +33,13 @@ for _ in range(5):
     y = random.randint(50, height - 50)
     lilled.append({'pos': (x, y), 'raadius': 30, 'varv': red})
 
+takistused=[]
+for _ in range(5):
+    w=60
+    h=10
+    x = random.randint(50, width - w)
+    y = random.randint(50, height - h)
+    takistused.append(pygame.Rect(x,y,w,h))
 while True:
     bee_speed_x = random.choice([-3, 3])
     bee_speed_y = random.choice([-3, 3])
@@ -61,6 +70,10 @@ def joonista_lilled():
     for lill in lilled:
         pygame.draw.circle(screen, lill['varv'], lill['pos'], lill['raadius'])
 
+def joonista_takistused():
+    for t in takistused:
+         pygame.draw.rect(screen,grey,t)
+
 clock = pygame.time.Clock()
 score = 0
 running = True
@@ -81,6 +94,13 @@ while running:
     if bee_rect.top <= 0 or bee_rect.bottom >= height:
         bee_speed_y *= -1
 
+    for t in takistused:
+        if bee_rect.colliderect(t):
+            bee_speed_x *= -1
+            bee_speed_y*= -1
+            break
+
+
     for lill in lilled[:]:
         dx = bee_rect.centerx - lill['pos'][0]
         dy = bee_rect.centery - lill['pos'][1]
@@ -94,6 +114,7 @@ while running:
 
     joonista_lilled()
     joonista_mesilane()
+    joonista_takistused()
 
     pygame.display.flip()
     clock.tick(60)
