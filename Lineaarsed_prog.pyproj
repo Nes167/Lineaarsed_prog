@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ulesanne3_P_M.py</StartupFile>
+    <StartupFile>hunt_püüab_mune.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -27,6 +27,7 @@
     <Compile Include="e-kiri_main.py" />
     <Compile Include="Ekirja_saatmine_ja_saamine.py" />
     <Compile Include="esimene_osa_pygame.py" />
+    <Compile Include="hunt_püüab_mune.py" />
     <Compile Include="kletochka.py" />
     <Compile Include="kletochka2.py" />
     <Compile Include="kletochka3.py" />
@@ -71,14 +72,21 @@
     <Compile Include="vigade_otsing.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="background.mp3" />
+    <Content Include="backgroup.png" />
     <Content Include="bee.png" />
+    <Content Include="bomb.wav" />
+    <Content Include="bomba.png" />
     <Content Include="cat.ico" />
     <Content Include="cat.png" />
+    <Content Include="catch.wav" />
     <Content Include="catt.png" />
     <Content Include="cat_png.png" />
     <Content Include="collect.mp3" />
+    <Content Include="egg.png" />
     <Content Include="FELV-cat.jpg" />
     <Content Include="funktsioonid.txt" />
+    <Content Include="game_over.wav" />
     <Content Include="kontaktid.json" />
     <Content Include="loetelu.txt" />
     <Content Include="maed.txt" />
@@ -90,7 +98,9 @@
     <Content Include="taust.jpg" />
     <Content Include="telefoniraamat.txt" />
     <Content Include="tomcat.png" />
+    <Content Include="white_egg.png" />
     <Content Include="win.png" />
+    <Content Include="wolf.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
