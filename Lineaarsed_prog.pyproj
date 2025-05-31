@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>13e23caf-8e80-4d6b-b2d5-9b2ec19e9a8b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>hunt_püüab_mune.py</StartupFile>
+    <StartupFile>ggg.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -27,6 +27,7 @@
     <Compile Include="e-kiri_main.py" />
     <Compile Include="Ekirja_saatmine_ja_saamine.py" />
     <Compile Include="esimene_osa_pygame.py" />
+    <Compile Include="ggg.py" />
     <Compile Include="hunt_püüab_mune.py" />
     <Compile Include="kletochka.py" />
     <Compile Include="kletochka2.py" />
@@ -79,7 +80,6 @@
     <Content Include="bomba.png" />
     <Content Include="cat.ico" />
     <Content Include="cat.png" />
-    <Content Include="catch.wav" />
     <Content Include="catt.png" />
     <Content Include="cat_png.png" />
     <Content Include="collect.mp3" />

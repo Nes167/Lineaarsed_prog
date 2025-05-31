@@ -3,72 +3,45 @@ import random
 import sys
 import os
 
-# Инициализация Pygame
 pygame.init()
 pygame.mixer.init()
 
-# Настройки экрана
 WIDTH, HEIGHT = 800, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Волк ловит яйца")
+pygame.display.set_caption("Hunt püüab mune")
 
-# Цвета
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 GOLD = (255, 215, 0)
 GREEN = (0, 255, 0)
 
-# Шрифты
-font = pygame.font.SysFont('Arial', 36)
-small_font = pygame.font.SysFont('Arial', 24)
+font=pygame.font.SysFont('Arial',36)
+small_font=pygame.font.SysFont('Arial',24)
 
-# Загрузка изображений (замените на свои или используйте прямоугольники)
-try:
-    wolf_img = pygame.image.load("wolf.png")
-    wolf_img = pygame.transform.scale(wolf_img, (80, 80))
-except:
-    wolf_img = pygame.Surface((80, 80))
-    wolf_img.fill((100, 100, 100)) # Серый прямоугольник вместо волка
+wolf_img=pygame.image.load("wolf.png")
+wolf_img=pygame.transform.scale(wolf_img, (100, 100))
 
-try:
-    egg_img = pygame.image.load("white_egg.png")
-    egg_img = pygame.transform.scale(egg_img, (40, 50))
-except:
-    egg_img = pygame.Surface((40, 50))
-    egg_img.fill((240, 240, 240)) # Белый прямоугольник вместо яйца
+egg_img = pygame.image.load("white_egg.png")
+egg_img = pygame.transform.scale(egg_img, (40, 50))
 
-try:
-    golden_egg_img = pygame.image.load("egg.png")
-    golden_egg_img = pygame.transform.scale(golden_egg_img, (40, 50))
-except:
-    golden_egg_img = pygame.Surface((40, 50))
-    golden_egg_img.fill(GOLD) # Золотой прямоугольник вместо золотого яйца
+golden_egg_img = pygame.image.load("egg.png")
+golden_egg_img = pygame.transform.scale(golden_egg_img, (40, 50))
 
-try:
-    bomb_img = pygame.image.load("bomba.png")
-    bomb_img = pygame.transform.scale(bomb_img, (40, 50))
-except:
-    bomb_img = pygame.Surface((40, 50))
-    bomb_img.fill(RED) # Красный прямоугольник вместо бомбы
+bomb_img = pygame.image.load("bomba.png")
+bomb_img = pygame.transform.scale(bomb_img, (40, 50))
 
-# Звуки (можно добавить реальные файлы)
-try:
-    catch_sound = pygame.mixer.Sound("catch.wav")
-    bomb_sound = pygame.mixer.Sound("bomb.wav")
-    game_over_sound = pygame.mixer.Sound("game_over.wav")
-    pygame.mixer.music.load("background.mp3")
-    pygame.mixer.music.set_volume(0.5)
-    sound_enabled = True
-except:
-    sound_enabled = False
-    print("Звуковые файлы не найдены, игра будет без звука")
+catch_sound = pygame.mixer.Sound("catch.wav")
+bomb_sound = pygame.mixer.Sound("bomb.wav")
+game_over_sound = pygame.mixer.Sound("game_over.wav")
+pygame.mixer.music.load("background.mp3")
+pygame.mixer.music.set_volume(0.5)
+sound_enabled = True
 
 # Игровые переменные
 class Game:
     def __init__(self):
         self.score = 0
-
         self.high_score = self.load_high_score()
         self.lives = 3
         self.level = 1
@@ -181,32 +154,29 @@ def update_difficulty():
             game.golden_chance = 0.15 # Увеличиваем шанс золотых яиц
 
 def draw_hud():
-    score_text = font.render(f"Очки: {game.score}", True, WHITE)
-    lives_text = font.render(f"Жизни: {game.lives}", True, WHITE)
-    level_text = font.render(f"Уровень: {game.level}", True, WHITE)
-
-    screen.blit(score_text, (10, 10))
-    screen.blit(lives_text, (10, 50))
-    screen.blit(level_text, (10, 90))
+    score_text = font.render(f"Score: {game.score}", True, WHITE)
+    lives_text = font.render(f"Lives: {game.lives}", True, WHITE)
+    level_text = font.render(f"Level: {game.level}", True, WHITE)
+    screen.blit(score_text,(10,10))
+    screen.blit(lives_text,(10,50))
+    screen.blit(level_text,(10,90))
 
 def draw_menu():
-    title = font.render("ВОЛК ЛОВИТ ЯЙЦА", True, WHITE)
-    start_text = small_font.render("Нажмите ПРОБЕЛ чтобы начать", True, WHITE)
-    exit_text = small_font.render("Нажмите ESC чтобы выйти", True, WHITE)
-    high_score_text = small_font.render(f"Рекорд: {game.high_score}", True, WHITE)
-
+    title = font.render("HUNT PÜÜAB MUNE", True, WHITE)
+    start_text = small_font.render("Alustamiseks vajutage SPACE", True, WHITE)
+    exit_text = small_font.render("Väljumiseks vajutage ESC", True, WHITE)
+    high_score_text = small_font.render(f"Rekord: {game.high_score}", True, WHITE)
     screen.blit(title, (WIDTH//2 - title.get_width()//2, HEIGHT//3))
     screen.blit(start_text, (WIDTH//2 - start_text.get_width()//2, HEIGHT//2))
     screen.blit(exit_text, (WIDTH//2 - exit_text.get_width()//2, HEIGHT//2 + 50))
     screen.blit(high_score_text, (WIDTH//2 - high_score_text.get_width()//2, HEIGHT//2 + 100))
 
 def draw_game_over():
-    game_over_text = font.render("ИГРА ОКОНЧЕНА", True, RED)
-    score_text = font.render(f"Ваш счет: {game.score}", True, WHITE)
-    high_score_text = font.render(f"Рекорд: {max(game.score, game.high_score)}", True, GOLD)
-    restart_text = small_font.render("Нажмите ПРОБЕЛ чтобы играть снова", True, WHITE)
-    exit_text = small_font.render("Нажмите ESC чтобы выйти", True, WHITE)
-
+    game_over_text = font.render("Mäng on läbi", True, RED)
+    score_text = font.render(f"Teie score: {game.score}", True, WHITE)
+    high_score_text = font.render(f"Rekord: {max(game.score, game.high_score)}", True, GOLD)
+    restart_text = small_font.render("Alustamiseks vajutage SPACE", True, WHITE)
+    exit_text = small_font.render("Väljumiseks vajutage ESC", True, WHITE)
     screen.blit(game_over_text, (WIDTH//2 - game_over_text.get_width()//2, HEIGHT//3))
     screen.blit(score_text, (WIDTH//2 - score_text.get_width()//2, HEIGHT//2))
     screen.blit(high_score_text, (WIDTH//2 - high_score_text.get_width()//2, HEIGHT//2 + 50))
@@ -269,7 +239,7 @@ while running:
             draw_eggs()
             draw_bombs()
             draw_hud()
-            pause_text = font.render("ПАУЗА", True, WHITE)
+            pause_text = font.render("PAUSE", True, WHITE)
             screen.blit(pause_text, (WIDTH // 2 - pause_text.get_width() // 2, HEIGHT // 2))
         else:
             # Управление
