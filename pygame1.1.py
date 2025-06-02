@@ -28,7 +28,6 @@ def oblako():
     pygame.draw.circle(ekraani_pind,hall,(600,200),60)
     pygame.draw.circle(ekraani_pind,hall,(550,150),50)
 
-
 pygame.init()
 kollane=[255,255,0]
 white=[255,255,255]
@@ -43,8 +42,6 @@ pruun=[139,69,19]
 ekraani_pind=pygame.display.set_mode((800,600))
 pygame.display.set_caption("Pygame aken")
 ekraani_pind.fill(sinine)
-
-
 
 paike()
 

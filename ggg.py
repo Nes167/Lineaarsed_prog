@@ -4,7 +4,8 @@ import sys
 
 pygame.init()
 
-WIDTH, HEIGHT = 800, 600
+WIDTH = 800
+HEIGHT = 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Hunt püüab mune")
 
@@ -25,6 +26,10 @@ golden_egg_img = pygame.transform.scale(golden_egg_img, (40, 50))
 
 bomb_img = pygame.image.load("bomba.png")
 bomb_img = pygame.transform.scale(bomb_img, (40, 50))
+
+taust=pygame.image.load("nebo.jpg")
+taust=pygame.transform.scale(taust,(WIDTH,HEIGHT))
+screen.blit(taust,(0,0))
 
 catch_sound = pygame.mixer.Sound("collect.mp3")
 bomb_sound = pygame.mixer.Sound("bomb.wav")
@@ -57,7 +62,7 @@ def draw_text(text, x, y, color=white):
     screen.blit(surface, (x, y))
 
 while True:
-    screen.fill(lblue)
+    screen.blit(taust,(0,0))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
